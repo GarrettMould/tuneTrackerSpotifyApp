@@ -1,0 +1,17 @@
+.contentContainer {
+  padding-top: 4%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeFrame {
+  font-size: 250%;
+  font-weight: 700;
+}
+
+.timeFrameContainer {
+  margin: 0% 5%;
+}
