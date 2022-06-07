@@ -14,7 +14,7 @@ const App = (props) => {
   //SPOTIFY VARIABLES
 
   const CLIENT_ID = "c2c550a96c8c4dc0a5836d3f479cc850";
-  const REDIRECT_URI = "https://shiny-zabaione-6f9ac4.netlify.app";
+  const REDIRECT_URI = "http://localhost:3000";
   const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SPACE_DELIMITER = "%20";
