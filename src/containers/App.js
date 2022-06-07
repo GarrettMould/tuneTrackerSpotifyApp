@@ -3,7 +3,6 @@ import MainPageDesktop from "../components/MainPageDesktop/MainPageDesktop";
 
 import HeaderMobile from "../components/HeaderMobile/HeaderMobile";
 import MainPageMobile from "../components/MainPageMobile/MainPageMobile";
-import { Button, Card } from "react-bootstrap";
 
 import Media from "react-media";
 import axios from "axios";
@@ -22,6 +21,7 @@ const App = (props) => {
   const SCOPES = ["user-top-read", "user-read-private"];
   const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 
+  const [dataTheme, setDataTheme] = useState("light");
   const [resultsType, setResultsType] = useState("");
   const [timeFrame, setTimeFrame] = useState("");
   const [token, setToken] = useState("");
@@ -81,47 +81,49 @@ const App = (props) => {
   var resultsGiven = userTopList;
 
   return (
-    <Media queries={{ small: { maxWidth: 599 } }}>
-      {(matches) =>
-        matches.small ? (
-          <>
-            <HeaderMobile logout={logout} token={token}></HeaderMobile>
-            <MainPageMobile
-              CLIENT_ID={CLIENT_ID}
-              REDIRECT_URI={REDIRECT_URI}
-              AUTH_ENDPOINT={AUTH_ENDPOINT}
-              RESPONSE_TYPE={RESPONSE_TYPE}
-              SPACE_DELIMITER={SPACE_DELIMITER}
-              SCOPES={SCOPES}
-              SCOPES_URL_PARAM={SCOPES_URL_PARAM}
-              resultsType={resultsType}
-              token={token}
-              resultsGiven={resultsGiven}
-              timeFrame={timeFrame}
-              searchArtists={searchArtists}
-            ></MainPageMobile>
-          </>
-        ) : (
-          <>
-            <HeaderDesktop logout={logout} token={token}></HeaderDesktop>
-            <MainPageDesktop
-              CLIENT_ID={CLIENT_ID}
-              REDIRECT_URI={REDIRECT_URI}
-              AUTH_ENDPOINT={AUTH_ENDPOINT}
-              RESPONSE_TYPE={RESPONSE_TYPE}
-              SPACE_DELIMITER={SPACE_DELIMITER}
-              SCOPES={SCOPES}
-              SCOPES_URL_PARAM={SCOPES_URL_PARAM}
-              resultsType={resultsType}
-              token={token}
-              resultsGiven={resultsGiven}
-              timeFrame={timeFrame}
-              searchArtists={searchArtists}
-            ></MainPageDesktop>
-          </>
-        )
-      }
-    </Media>
+    <div data-theme="dark">
+      <Media queries={{ small: { maxWidth: 599 } }}>
+        {(matches) =>
+          matches.small ? (
+            <>
+              <HeaderMobile logout={logout} token={token}></HeaderMobile>
+              <MainPageMobile
+                CLIENT_ID={CLIENT_ID}
+                REDIRECT_URI={REDIRECT_URI}
+                AUTH_ENDPOINT={AUTH_ENDPOINT}
+                RESPONSE_TYPE={RESPONSE_TYPE}
+                SPACE_DELIMITER={SPACE_DELIMITER}
+                SCOPES={SCOPES}
+                SCOPES_URL_PARAM={SCOPES_URL_PARAM}
+                resultsType={resultsType}
+                token={token}
+                resultsGiven={resultsGiven}
+                timeFrame={timeFrame}
+                searchArtists={searchArtists}
+              ></MainPageMobile>
+            </>
+          ) : (
+            <>
+              <HeaderDesktop logout={logout} token={token}></HeaderDesktop>
+              <MainPageDesktop
+                CLIENT_ID={CLIENT_ID}
+                REDIRECT_URI={REDIRECT_URI}
+                AUTH_ENDPOINT={AUTH_ENDPOINT}
+                RESPONSE_TYPE={RESPONSE_TYPE}
+                SPACE_DELIMITER={SPACE_DELIMITER}
+                SCOPES={SCOPES}
+                SCOPES_URL_PARAM={SCOPES_URL_PARAM}
+                resultsType={resultsType}
+                token={token}
+                resultsGiven={resultsGiven}
+                timeFrame={timeFrame}
+                searchArtists={searchArtists}
+              ></MainPageDesktop>
+            </>
+          )
+        }
+      </Media>
+    </div>
   );
 };
 

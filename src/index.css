@@ -1,5 +1,15 @@
 :root {
+  --primary: #121212;
+  --secondary: #ffffff;
   --primary-green: #1db954;
+  --grey: grey;
+}
+
+[data-theme="dark"] {
+  --primary: #121212;
+  --secondary: #ffffff;
+  --primary-green: pink;
+  --grey: grey;
 }
 
 body {
