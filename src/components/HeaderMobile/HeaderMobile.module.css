@@ -1,14 +1,14 @@
 .navbarHeader {
   background-color: var(--primary);
-  padding: 5% 4%;
+  padding: 8% 4% !important;
   display: flex;
   border-bottom: 1px solid #c8c8c8;
   box-shadow: 0 0 5px rgb(0 0 0 / 15%);
 }
 
 .navbarHeaderDark {
+  padding: 8% 4% !important;
   background-color: var(--primary);
-  padding: 5% 4%;
   display: flex;
 }
 
