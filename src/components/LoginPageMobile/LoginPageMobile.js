@@ -7,9 +7,7 @@ const LoginPageMobile = (props) => {
         <div className={classes.contentWrapper}>
           <div className={classes.bigTitle}>Welcome to Tune Tracker</div>
           <div className={classes.smallTitle}>
-            Tune Tracker is a Spotify web app that helps you visualize your most
-            listened to tracks and artists and create custom playlists from
-            those tunes
+            Visualize your most listened to songs and artists with Tune Tracker
           </div>
           <a
             href={`${props.AUTH_ENDPOINT}?client_id=${props.CLIENT_ID}&redirect_uri=${props.REDIRECT_URI}&response_type=${props.RESPONSE_TYPE}&scope=${props.SCOPES_URL_PARAM}`}

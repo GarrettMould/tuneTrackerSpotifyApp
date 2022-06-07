@@ -1,4 +1,4 @@
-import { Card } from "react-bootstrap";
+import { Card, Container, Row, Col } from "react-bootstrap";
 import classes from "./ResultsBoxMobile.module.css";
 
 const ResultsBoxMobile = (props) => {
@@ -7,8 +7,9 @@ const ResultsBoxMobile = (props) => {
   {
     props.resultsType == "tracks"
       ? (results = props.resultsGiven.map((result, i) => {
+          var number = i + 1;
           return (
-            <Card className={classes.card} key={result.id}>
+            <Col xs="4" className={classes.column}>
               <div className={classes.contentContainer}>
                 <div className={classes.imageContainer}>
                   <img
@@ -17,19 +18,23 @@ const ResultsBoxMobile = (props) => {
                   ></img>
                 </div>
                 <div className={classes.nameContainer}>
-                  <div className={classes.name}>{result.name}</div>
+                  <div className={classes.name}>
+                    <span className={classes.number}>{`${number}.`}</span>{" "}
+                    {result.name}
+                  </div>
                   <div className={classes.secondaryName}>
                     {" "}
                     {result.artists[0].name}{" "}
                   </div>
                 </div>
               </div>
-            </Card>
+            </Col>
           );
         }))
       : (results = props.resultsGiven.map((result, i) => {
+          var number = i + 1;
           return (
-            <Card className={classes.card} key={result.id}>
+            <Col xs="4" className={classes.column}>
               <div className={classes.contentContainer}>
                 <div className={classes.imageContainer}>
                   <img
@@ -38,15 +43,24 @@ const ResultsBoxMobile = (props) => {
                   ></img>
                 </div>
                 <div className={classes.nameContainer}>
-                  <div className={classes.name}>{result.name}</div>
+                  <div className={classes.name}>
+                    <span className={classes.number}>{`${number}.`}</span>{" "}
+                    {result.name}
+                  </div>
                 </div>
               </div>
-            </Card>
+            </Col>
           );
         }));
   }
 
-  return <div className={classes.background}>{results}</div>;
+  return (
+    <div className={classes.background}>
+      <Container>
+        <Row className={classes.row}>{results}</Row>
+      </Container>
+    </div>
+  );
 };
 
 export default ResultsBoxMobile;

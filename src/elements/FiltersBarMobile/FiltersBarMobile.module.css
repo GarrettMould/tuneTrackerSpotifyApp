@@ -1,6 +1,6 @@
 .padding {
   padding-top: 3%;
-  width: 100%;
+  width: 90%;
 }
 
 .contentContainer {
@@ -29,7 +29,7 @@
 .btn:hover,
 .btn:focus,
 .btn:active {
-  font-size: 120% !important;
+  font-size: 80% !important;
   font-weight: 600 !important;
   background-color: transparent !important;
   color: black !important;
@@ -42,7 +42,7 @@
 .btnActive:hover,
 .btnActive:focus,
 .btnActive:active {
-  font-size: 120% !important;
+  font-size: 80% !important;
   font-weight: 600 !important;
   background-color: transparent !important;
   color: var(--primary-green) !important;

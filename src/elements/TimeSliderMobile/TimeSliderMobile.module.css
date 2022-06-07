@@ -1,6 +1,6 @@
 .contentContainer {
-  padding-top: 4%;
-  width: 100%;
+  padding-top: 6%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -8,8 +8,9 @@
 }
 
 .timeFrame {
-  font-size: 250%;
+  font-size: 230%;
   font-weight: 700;
+  text-align: center;
 }
 
 .timeFrameContainer {

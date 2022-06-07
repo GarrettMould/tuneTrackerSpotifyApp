@@ -59,9 +59,9 @@
 }
 
 .btn {
-  width: 120%;
-  font-size: 1.1rem;
-  font-family: 500;
+  width: 80%;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
   background-color: var(--primary-green) !important;
   outline: none !important;
   border: none !important;

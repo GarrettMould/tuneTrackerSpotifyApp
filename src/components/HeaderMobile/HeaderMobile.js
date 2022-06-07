@@ -11,7 +11,13 @@ const HeaderMobile = (props) => {
           <span className={classes.greenText}>Tune</span> Tracker
         </div>
         <div className={classes.navListContainer}>
-          <List size={30} weight="bold"></List>
+          {loggedIn ? (
+            <Button className={classes.btn} onClick={props.logout}>
+              Logout
+            </Button>
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
     </Navbar>
