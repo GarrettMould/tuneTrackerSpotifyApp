@@ -1,5 +1,5 @@
 import { Navbar, Button } from "react-bootstrap";
-import { ArrowCircleLeft, ArrowCircleRight } from "phosphor-react";
+
 import classes from "./HeaderDesktop.module.css";
 
 const HeaderDesktop = (props) => {
