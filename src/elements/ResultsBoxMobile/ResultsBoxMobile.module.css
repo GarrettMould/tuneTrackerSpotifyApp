@@ -35,11 +35,12 @@
 }
 
 .number {
-  color: grey;
+  color: var(--grey);
   font-size: 90%;
   font-weight: 600;
 }
 .name {
+  color: var(--secondary);
   white-space: nowrap;
   padding-top: 5%;
   font-size: 80%;
@@ -49,5 +50,5 @@
 .secondaryName {
   font-size: 70%;
   font-weight: 500;
-  color: grey;
+  color: var(--grey);
 }

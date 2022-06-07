@@ -14,14 +14,14 @@ const App = (props) => {
   //SPOTIFY VARIABLES
 
   const CLIENT_ID = "c2c550a96c8c4dc0a5836d3f479cc850";
-  const REDIRECT_URI = "http://localhost:3000";
+  const REDIRECT_URI = "https://shiny-zabaione-6f9ac4.netlify.app";
   const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SPACE_DELIMITER = "%20";
   const SCOPES = ["user-top-read", "user-read-private"];
   const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 
-  const [dataTheme, setDataTheme] = useState("light");
+  const [dataTheme, setDataTheme] = useState("dark");
   const [resultsType, setResultsType] = useState("");
   const [timeFrame, setTimeFrame] = useState("");
   const [token, setToken] = useState("");
@@ -81,13 +81,18 @@ const App = (props) => {
   var resultsGiven = userTopList;
 
   return (
-    <div data-theme="dark">
+    <div data-theme={dataTheme}>
       <Media queries={{ small: { maxWidth: 599 } }}>
         {(matches) =>
           matches.small ? (
             <>
-              <HeaderMobile logout={logout} token={token}></HeaderMobile>
+              <HeaderMobile
+                dataTheme={dataTheme}
+                logout={logout}
+                token={token}
+              ></HeaderMobile>
               <MainPageMobile
+                dataTheme={dataTheme}
                 CLIENT_ID={CLIENT_ID}
                 REDIRECT_URI={REDIRECT_URI}
                 AUTH_ENDPOINT={AUTH_ENDPOINT}
@@ -104,8 +109,13 @@ const App = (props) => {
             </>
           ) : (
             <>
-              <HeaderDesktop logout={logout} token={token}></HeaderDesktop>
+              <HeaderDesktop
+                dataTheme={dataTheme}
+                logout={logout}
+                token={token}
+              ></HeaderDesktop>
               <MainPageDesktop
+                dataTheme={dataTheme}
                 CLIENT_ID={CLIENT_ID}
                 REDIRECT_URI={REDIRECT_URI}
                 AUTH_ENDPOINT={AUTH_ENDPOINT}

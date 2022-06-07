@@ -8,6 +8,7 @@
 }
 
 .timeFrame {
+  color: var(--secondary);
   font-size: 230%;
   font-weight: 700;
   text-align: center;

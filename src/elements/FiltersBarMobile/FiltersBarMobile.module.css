@@ -12,7 +12,7 @@
 .block {
   height: 20px;
   width: 2px;
-  background-color: black;
+  background-color: var(--secondary);
 }
 
 .searchTypeContainer {
@@ -29,10 +29,10 @@
 .btn:hover,
 .btn:focus,
 .btn:active {
-  font-size: 80% !important;
+  font-size: 70% !important;
   font-weight: 600 !important;
   background-color: transparent !important;
-  color: black !important;
+  color: var(--secondary) !important;
   outline: none !important;
   box-shadow: none !important;
   border: none !important;

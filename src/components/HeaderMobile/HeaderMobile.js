@@ -4,8 +4,13 @@ import classes from "./HeaderMobile.module.css";
 
 const HeaderMobile = (props) => {
   const loggedIn = props.token;
+  var dataTheme = props.dataTheme;
   return (
-    <Navbar className={classes.navbarHeader}>
+    <Navbar
+      className={
+        dataTheme == "light" ? classes.navbarHeader : classes.navbarHeaderDark
+      }
+    >
       <div className={classes.navContentContainer}>
         <div className={classes.siteTitle}>
           <span className={classes.greenText}>Tune</span> Tracker

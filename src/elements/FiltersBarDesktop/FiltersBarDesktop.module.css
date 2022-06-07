@@ -12,7 +12,7 @@
 .block {
   height: 20px;
   width: 2px;
-  background-color: black;
+  background-color: var(--secondary);
 }
 
 .searchTypeContainer {
@@ -32,7 +32,7 @@
   font-size: 120% !important;
   font-weight: 600 !important;
   background-color: transparent !important;
-  color: black !important;
+  color: var(--secondary) !important;
   outline: none !important;
   box-shadow: none !important;
   border: none !important;

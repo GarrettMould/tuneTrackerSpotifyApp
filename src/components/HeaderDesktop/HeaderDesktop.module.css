@@ -1,7 +1,15 @@
 .navbarHeader {
+  background-color: var(--primary);
   padding: 1.5% 2%;
   display: flex;
   border-bottom: 1px solid #c8c8c8;
+  box-shadow: 0 0 5px rgb(0 0 0 / 15%);
+}
+
+.navbarHeaderDark {
+  background-color: var(--primary);
+  padding: 1.5% 2%;
+  display: flex;
   box-shadow: 0 0 5px rgb(0 0 0 / 15%);
 }
 
@@ -15,6 +23,7 @@
 }
 
 .siteTitle {
+  color: var(--secondary);
   font-size: 2.2rem;
   font-weight: 800;
 }
