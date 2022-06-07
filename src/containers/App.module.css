@@ -1,3 +1,6 @@
+body {
+  background-color: var(--primary);
+}
 ul {
   text-decoration: none;
   list-style: none;

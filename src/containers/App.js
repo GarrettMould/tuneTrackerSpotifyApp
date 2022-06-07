@@ -21,7 +21,7 @@ const App = (props) => {
   const SCOPES = ["user-top-read", "user-read-private"];
   const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 
-  const [dataTheme, setDataTheme] = useState("dark");
+  const [dataTheme, setDataTheme] = useState("light");
   const [resultsType, setResultsType] = useState("");
   const [timeFrame, setTimeFrame] = useState("");
   const [token, setToken] = useState("");
