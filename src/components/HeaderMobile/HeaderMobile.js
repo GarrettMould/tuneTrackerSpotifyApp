@@ -21,7 +21,9 @@ const HeaderMobile = (props) => {
               Logout
             </Button>
           ) : (
-            <div></div>
+            <Button className={classes.btn} onClick={props.updateTheme}>
+              {dataTheme == "light" ? "Dark" : "Light"}
+            </Button>
           )}
         </div>
       </div>

@@ -46,6 +46,11 @@ const HeaderDesktop = (props) => {
                   <li className={classes.item}>Share</li>
                 </a>
               </div>
+              <div className={classes.itemContainerLoggedOut}>
+                <Button className={classes.btn} onClick={props.updateTheme}>
+                  {dataTheme == "light" ? "Dark" : "Light"}
+                </Button>
+              </div>
             </ul>
           )}
         </div>

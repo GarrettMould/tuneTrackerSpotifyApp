@@ -21,7 +21,7 @@ const App = (props) => {
   const SCOPES = ["user-top-read", "user-read-private"];
   const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 
-  const [dataTheme, setDataTheme] = useState("light");
+  const [dataTheme, setDataTheme] = useState("dark");
   const [resultsType, setResultsType] = useState("");
   const [timeFrame, setTimeFrame] = useState("");
   const [token, setToken] = useState("");
@@ -46,6 +46,9 @@ const App = (props) => {
     setToken(token);
   });
 
+  const updateTheme = () => {
+    dataTheme == "light" ? setDataTheme("dark") : setDataTheme("light");
+  };
   // Function to clear token and clear results display
   const logout = () => {
     setToken("");
@@ -87,6 +90,7 @@ const App = (props) => {
           matches.small ? (
             <>
               <HeaderMobile
+                updateTheme={updateTheme}
                 dataTheme={dataTheme}
                 logout={logout}
                 token={token}
@@ -110,6 +114,7 @@ const App = (props) => {
           ) : (
             <>
               <HeaderDesktop
+                updateTheme={updateTheme}
                 dataTheme={dataTheme}
                 logout={logout}
                 token={token}
