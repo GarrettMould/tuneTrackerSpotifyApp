@@ -1,18 +1,19 @@
-import { ArrowCircleLeft, ArrowCircleRight } from "phosphor-react";
 import classes from "./TimeSliderMobile.module.css";
+/*Eventually the title will be something like this Top {searchType} this {timePeriod} and the values will be taken from the value of the buttons (filter options) chosen by the user */
 
 const TimeSliderMobile = (props) => {
+  var results = props.resultsType;
+  var time = props.timeFrame;
   return (
-    <div className={classes.padding}>
-      <div className={classes.contentContainer}>
-        <div className={classes.arrowContainer}>
-          <ArrowCircleLeft size={30}></ArrowCircleLeft>
-        </div>
-        <div className={classes.timeFrameContainer}>
-          <div className={classes.timeFrame}>This Month</div>
-        </div>
-        <div className={classes.arrowContainer}>
-          <ArrowCircleRight size={30}></ArrowCircleRight>
+    <div className={classes.contentContainer}>
+      <div className={classes.timeFrameContainer}>
+        <div className={classes.timeFrame}>
+          Top {results == "tracks" ? "Tracks" : "Artists"}{" "}
+          {time == "short_term"
+            ? "This Month"
+            : time == "medium_term"
+            ? " of the Past Six Months"
+            : "of All Time"}
         </div>
       </div>
     </div>

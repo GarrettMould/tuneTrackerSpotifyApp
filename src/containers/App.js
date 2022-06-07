@@ -1,6 +1,8 @@
 import HeaderDesktop from "../components/HeaderDesktop/HeaderDesktop";
-import HeaderMobile from "../components/HeaderMobile/HeaderMobile";
 import MainPageDesktop from "../components/MainPageDesktop/MainPageDesktop";
+
+import HeaderMobile from "../components/HeaderMobile/HeaderMobile";
+import MainPageMobile from "../components/MainPageMobile/MainPageMobile";
 import { Button, Card } from "react-bootstrap";
 
 import Media from "react-media";
@@ -84,8 +86,7 @@ const App = (props) => {
         matches.small ? (
           <>
             <HeaderMobile logout={logout} token={token}></HeaderMobile>
-
-            <MainPageDesktop
+            <MainPageMobile
               CLIENT_ID={CLIENT_ID}
               REDIRECT_URI={REDIRECT_URI}
               AUTH_ENDPOINT={AUTH_ENDPOINT}
@@ -98,7 +99,7 @@ const App = (props) => {
               resultsGiven={resultsGiven}
               timeFrame={timeFrame}
               searchArtists={searchArtists}
-            ></MainPageDesktop>
+            ></MainPageMobile>
           </>
         ) : (
           <>

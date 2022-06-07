@@ -1,0 +1,48 @@
+.background {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: transparent;
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 0 3px rgb(0 0 0 / 15%);
+  width: 100%;
+}
+.blank {
+  background-color: blue;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 1%;
+}
+
+.image {
+  max-width: 120px;
+  border-radius: 5%;
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+}
+.name {
+  padding-top: 5%;
+  font-size: 140%;
+  font-weight: 600;
+}
+
+.secondaryName {
+  font-size: 100%;
+  font-weight: 500;
+  color: grey;
+}

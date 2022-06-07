@@ -1,7 +1,7 @@
 import { Card } from "react-bootstrap";
-import classes from "./ResultsBoxDesktop.module.css";
+import classes from "./ResultsBoxMobile.module.css";
 
-const ResultsBoxDesktop = (props) => {
+const ResultsBoxMobile = (props) => {
   var results;
   var loggedIn = props.token;
   {
@@ -49,4 +49,4 @@ const ResultsBoxDesktop = (props) => {
   return <div className={classes.background}>{results}</div>;
 };
 
-export default ResultsBoxDesktop;
+export default ResultsBoxMobile;
