@@ -9,11 +9,13 @@ const TimeSliderMobile = (props) => {
       <div className={classes.timeFrameContainer}>
         <div className={classes.timeFrame}>
           Top {results == "tracks" ? "Tracks" : "Artists"}{" "}
+        </div>
+        <div className={classes.timeFrameSmall}>
           {time == "short_term"
             ? "This Month"
             : time == "medium_term"
-            ? " of the Past Six Months"
-            : "of All Time"}
+            ? "Past Six Months"
+            : "All Time"}
         </div>
       </div>
     </div>
