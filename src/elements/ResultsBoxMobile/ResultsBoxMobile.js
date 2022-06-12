@@ -1,3 +1,4 @@
+import NoResultsAlertMobile from "../NoResultsAlertMobile/NoResultsAlertMobile";
 import LoadMoreButtonMobile from "../LoadMoreButtonMobile/LoadMoreButtonMobile";
 import ShowLessButtonMobile from "../ShowLessButtonMobile/ShowLessButtonMobile";
 
@@ -6,8 +7,8 @@ import classes from "./ResultsBoxMobile.module.css";
 
 const ResultsBoxMobile = (props) => {
   var results;
+  var userTopList = props.userTopList;
   var resultsLength = props.resultsLength;
-  console.log(resultsLength);
   var button;
 
   resultsLength == 20
@@ -79,8 +80,14 @@ const ResultsBoxMobile = (props) => {
   return (
     <div className={classes.background}>
       <Container>
-        <Row className={classes.row}>{results}</Row>
-        {button}
+        {!userTopList.length ? (
+          <NoResultsAlertMobile></NoResultsAlertMobile>
+        ) : (
+          <>
+            <Row className={classes.row}>{results}</Row>
+            {button}
+          </>
+        )}
       </Container>
     </div>
   );

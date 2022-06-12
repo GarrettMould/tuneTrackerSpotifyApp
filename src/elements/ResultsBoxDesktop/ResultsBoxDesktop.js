@@ -2,11 +2,12 @@ import ShowLessButtonDesktop from "../ShowLessButtonDesktop/ShowLessButtonDeskto
 import LoadMoreButtonDesktop from "../LoadMoreButtonDesktop/LoadMoreButtonDesktop";
 import { Card, Container, Col, Row } from "react-bootstrap";
 import classes from "./ResultsBoxDesktop.module.css";
+import NoResultsAlertDesktop from "../NoResultsAlertDesktop/NoResultsAlertDesktop";
 
 const ResultsBoxDesktop = (props) => {
   var results;
+  var userTopList = props.userTopList;
   var resultsLength = props.resultsLength;
-  console.log(resultsLength);
   var button;
 
   resultsLength == 20
@@ -78,8 +79,14 @@ const ResultsBoxDesktop = (props) => {
   return (
     <div className={classes.background}>
       <Container>
-        <Row className={classes.row}>{results}</Row>
-        {button}
+        {!userTopList.length ? (
+          <NoResultsAlertDesktop></NoResultsAlertDesktop>
+        ) : (
+          <>
+            <Row className={classes.row}>{results}</Row>
+            {button}
+          </>
+        )}
       </Container>
     </div>
   );

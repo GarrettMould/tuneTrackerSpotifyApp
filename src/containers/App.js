@@ -14,7 +14,7 @@ const App = (props) => {
   //SPOTIFY VARIABLES
 
   const CLIENT_ID = "c2c550a96c8c4dc0a5836d3f479cc850";
-  const REDIRECT_URI = "https://tunetracker.netlify.app/";
+  const REDIRECT_URI = "http://localhost:3000/";
   const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SPACE_DELIMITER = "%20";
@@ -80,6 +80,8 @@ const App = (props) => {
     setUserTopList(data.items);
     setResultsLength(data.limit);
     console.log(data);
+    console.log(resultsLength);
+    console.log(userTopList);
   };
 
   // Function to retreive expanded search results and display them
@@ -132,6 +134,7 @@ const App = (props) => {
                 SCOPES_URL_PARAM={SCOPES_URL_PARAM}
                 resultsType={resultsType}
                 token={token}
+                userTopList={userTopList}
                 resultsGiven={resultsGiven}
                 timeFrame={timeFrame}
                 resultsLength={resultsLength}
@@ -161,6 +164,7 @@ const App = (props) => {
                 resultsGiven={resultsGiven}
                 timeFrame={timeFrame}
                 resultsLength={resultsLength}
+                userTopList={userTopList}
                 searchArtists={searchArtists}
                 searchArtistsExpand={searchArtistsExpand}
               ></MainPageDesktop>

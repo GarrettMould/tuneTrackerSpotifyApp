@@ -13,6 +13,7 @@ const MainPageMobile = (props) => {
             resultsGiven={props.resultsGiven}
             resultsType={props.resultsType}
             timeFrame={props.timeFrame}
+            userTopList={props.userTopList}
             resultsLength={props.resultsLength}
             searchArtists={props.searchArtists}
             searchArtistsExpand={props.searchArtistsExpand}

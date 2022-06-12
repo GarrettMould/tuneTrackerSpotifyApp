@@ -14,6 +14,7 @@ const MainPageDesktop = (props) => {
             token={props.token}
             resultsGiven={props.resultsGiven}
             resultsType={props.resultsType}
+            userTopList={props.userTopList}
             resultsLength={props.resultsLength}
             timeFrame={props.timeFrame}
             searchArtists={props.searchArtists}

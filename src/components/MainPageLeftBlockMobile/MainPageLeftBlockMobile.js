@@ -28,6 +28,7 @@ const MainPageLeftBlockMobile = (props) => {
         timeFrame={props.timeFrame}
         token={props.token}
         resultsGiven={props.resultsGiven}
+        userTopList={props.userTopList}
         resultsLength={props.resultsLength}
         searchArtists={props.searchArtists}
         searchArtistsExpand={props.searchArtistsExpand}

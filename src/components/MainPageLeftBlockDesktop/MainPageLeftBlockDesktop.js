@@ -28,6 +28,7 @@ const MainPageLeftBlockDesktop = (props) => {
         timeFrame={props.timeFrame}
         resultsLength={props.resultsLength}
         token={props.token}
+        userTopList={props.userTopList}
         resultsGiven={props.resultsGiven}
         searchArtists={props.searchArtists}
         searchArtistsExpand={props.searchArtistsExpand}
