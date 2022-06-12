@@ -29,7 +29,7 @@
 .btn:hover,
 .btn:focus,
 .btn:active {
-  font-size: 70% !important;
+  font-size: 80% !important;
   font-weight: 600 !important;
   background-color: transparent !important;
   color: var(--secondary) !important;
