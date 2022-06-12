@@ -61,6 +61,10 @@
   margin-left: 80px;
 }
 
+.itemContainer {
+  margin-left: 50px;
+}
+
 .item {
   font-size: 1.1rem;
   font-weight: 500;

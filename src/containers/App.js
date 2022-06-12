@@ -14,7 +14,7 @@ const App = (props) => {
   //SPOTIFY VARIABLES
 
   const CLIENT_ID = "c2c550a96c8c4dc0a5836d3f479cc850";
-  const REDIRECT_URI = "http://localhost:3000";
+  const REDIRECT_URI = "https://tunetracker.netlify.app/";
   const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SPACE_DELIMITER = "%20";
@@ -26,8 +26,8 @@ const App = (props) => {
   const [timeFrame, setTimeFrame] = useState("");
   const [token, setToken] = useState("");
   const [userTopList, setUserTopList] = useState([]);
+  const [resultsLength, setResultsLength] = useState(20);
 
-  console.log(token, resultsType);
   // Fetches the token from the spotify url
   useEffect(() => {
     const hash = window.location.hash;
@@ -78,6 +78,32 @@ const App = (props) => {
     setResultsType(results);
     setTimeFrame(time);
     setUserTopList(data.items);
+    setResultsLength(data.limit);
+    console.log(data);
+  };
+
+  // Function to retreive expanded search results and display them
+  const searchArtistsExpand = async (results, time) => {
+    var type = results;
+    var time_range = time;
+    const { data } = await axios.get(
+      `https://api.spotify.com/v1/me/top/${type}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params: {
+          limit: 50,
+          time_range: `${time_range}`,
+        },
+      }
+    );
+
+    setResultsType(results);
+    setTimeFrame(time);
+    setUserTopList(data.items);
+    setResultsLength(data.limit);
+
     console.log(data);
   };
 
@@ -108,7 +134,9 @@ const App = (props) => {
                 token={token}
                 resultsGiven={resultsGiven}
                 timeFrame={timeFrame}
+                resultsLength={resultsLength}
                 searchArtists={searchArtists}
+                searchArtistsExpand={searchArtistsExpand}
               ></MainPageMobile>
             </>
           ) : (
@@ -132,7 +160,9 @@ const App = (props) => {
                 token={token}
                 resultsGiven={resultsGiven}
                 timeFrame={timeFrame}
+                resultsLength={resultsLength}
                 searchArtists={searchArtists}
+                searchArtistsExpand={searchArtistsExpand}
               ></MainPageDesktop>
             </>
           )

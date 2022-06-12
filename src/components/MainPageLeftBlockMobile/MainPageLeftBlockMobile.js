@@ -25,8 +25,12 @@ const MainPageLeftBlockMobile = (props) => {
 
       <ResultsBoxMobile
         resultsType={props.resultsType}
+        timeFrame={props.timeFrame}
         token={props.token}
         resultsGiven={props.resultsGiven}
+        resultsLength={props.resultsLength}
+        searchArtists={props.searchArtists}
+        searchArtistsExpand={props.searchArtistsExpand}
       ></ResultsBoxMobile>
     </div>
   );

@@ -25,8 +25,12 @@ const MainPageLeftBlockDesktop = (props) => {
 
       <ResultsBoxDesktop
         resultsType={props.resultsType}
+        timeFrame={props.timeFrame}
+        resultsLength={props.resultsLength}
         token={props.token}
         resultsGiven={props.resultsGiven}
+        searchArtists={props.searchArtists}
+        searchArtistsExpand={props.searchArtistsExpand}
       ></ResultsBoxDesktop>
     </div>
   );

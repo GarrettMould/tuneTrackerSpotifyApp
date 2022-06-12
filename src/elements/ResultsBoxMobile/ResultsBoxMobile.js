@@ -1,9 +1,31 @@
+import LoadMoreButtonMobile from "../LoadMoreButtonMobile/LoadMoreButtonMobile";
+import ShowLessButtonMobile from "../ShowLessButtonMobile/ShowLessButtonMobile";
+
 import { Card, Container, Row, Col } from "react-bootstrap";
 import classes from "./ResultsBoxMobile.module.css";
 
 const ResultsBoxMobile = (props) => {
   var results;
-  var loggedIn = props.token;
+  var resultsLength = props.resultsLength;
+  console.log(resultsLength);
+  var button;
+
+  resultsLength == 20
+    ? (button = (
+        <LoadMoreButtonMobile
+          resultsType={props.resultsType}
+          timeFrame={props.timeFrame}
+          searchArtistsExpand={props.searchArtistsExpand}
+        ></LoadMoreButtonMobile>
+      ))
+    : (button = (
+        <ShowLessButtonMobile
+          resultsType={props.resultsType}
+          timeFrame={props.timeFrame}
+          searchArtists={props.searchArtists}
+        ></ShowLessButtonMobile>
+      ));
+
   {
     props.resultsType == "tracks"
       ? (results = props.resultsGiven.map((result, i) => {
@@ -58,6 +80,7 @@ const ResultsBoxMobile = (props) => {
     <div className={classes.background}>
       <Container>
         <Row className={classes.row}>{results}</Row>
+        {button}
       </Container>
     </div>
   );

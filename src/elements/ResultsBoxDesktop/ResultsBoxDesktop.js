@@ -1,9 +1,30 @@
+import ShowLessButtonDesktop from "../ShowLessButtonDesktop/ShowLessButtonDesktop";
+import LoadMoreButtonDesktop from "../LoadMoreButtonDesktop/LoadMoreButtonDesktop";
 import { Card, Container, Col, Row } from "react-bootstrap";
 import classes from "./ResultsBoxDesktop.module.css";
 
 const ResultsBoxDesktop = (props) => {
   var results;
-  var loggedIn = props.token;
+  var resultsLength = props.resultsLength;
+  console.log(resultsLength);
+  var button;
+
+  resultsLength == 20
+    ? (button = (
+        <LoadMoreButtonDesktop
+          resultsType={props.resultsType}
+          timeFrame={props.timeFrame}
+          searchArtistsExpand={props.searchArtistsExpand}
+        ></LoadMoreButtonDesktop>
+      ))
+    : (button = (
+        <ShowLessButtonDesktop
+          resultsType={props.resultsType}
+          timeFrame={props.timeFrame}
+          searchArtists={props.searchArtists}
+        ></ShowLessButtonDesktop>
+      ));
+
   {
     props.resultsType == "tracks"
       ? (results = props.resultsGiven.map((result, i) => {
@@ -58,6 +79,7 @@ const ResultsBoxDesktop = (props) => {
     <div className={classes.background}>
       <Container>
         <Row className={classes.row}>{results}</Row>
+        {button}
       </Container>
     </div>
   );

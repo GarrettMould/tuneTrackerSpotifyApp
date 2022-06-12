@@ -12,8 +12,6 @@ const FiltersBarDesktop = (props) => {
     handleSubmit();
   }, [results, time]);
 
-  console.log(results, time);
-
   const handleSubmit = () => {
     props.searchArtists(results, time);
     console.log(activeResults, activeTime);

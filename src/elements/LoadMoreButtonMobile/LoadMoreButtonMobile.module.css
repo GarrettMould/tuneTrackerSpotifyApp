@@ -1,0 +1,14 @@
+.padding {
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  width: 100% !important;
+  font-size: 0.75rem !important;
+  font-family: 500 !important;
+  background-color: var(--primary-green) !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}

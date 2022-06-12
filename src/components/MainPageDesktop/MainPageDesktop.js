@@ -14,8 +14,10 @@ const MainPageDesktop = (props) => {
             token={props.token}
             resultsGiven={props.resultsGiven}
             resultsType={props.resultsType}
+            resultsLength={props.resultsLength}
             timeFrame={props.timeFrame}
             searchArtists={props.searchArtists}
+            searchArtistsExpand={props.searchArtistsExpand}
           ></MainPageLeftBlockDesktop>
         </>
       ) : (

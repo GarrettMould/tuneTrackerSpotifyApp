@@ -13,7 +13,9 @@ const MainPageMobile = (props) => {
             resultsGiven={props.resultsGiven}
             resultsType={props.resultsType}
             timeFrame={props.timeFrame}
+            resultsLength={props.resultsLength}
             searchArtists={props.searchArtists}
+            searchArtistsExpand={props.searchArtistsExpand}
           ></MainPageLeftBlockMobile>
         </>
       ) : (

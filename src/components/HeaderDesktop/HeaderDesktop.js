@@ -20,12 +20,9 @@ const HeaderDesktop = (props) => {
             <ul className={classes.navList}>
               <div className={classes.itemContainer}>
                 <a href="#">
-                  <li className={classes.item}>How it Works</li>
-                </a>
-              </div>
-              <div className={classes.itemContainer}>
-                <a href="#">
-                  <li className={classes.item}>Share</li>
+                  <li className={classes.item} onClick={props.updateTheme}>
+                    {dataTheme == "light" ? "Dark Mode" : "Light Mode"}
+                  </li>
                 </a>
               </div>
               <div className={classes.itemContainer}>
