@@ -17,10 +17,15 @@ const App = (props) => {
   const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SPACE_DELIMITER = "%20";
-  const SCOPES = ["user-top-read", "user-read-private"];
+  const SCOPES = [
+    "user-top-read",
+    "user-read-private",
+    "user-read-email",
+    "playlist-modify-public",
+    "playlist-modify-private",
+  ];
   const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 
-  //
   const [dataTheme, setDataTheme] = useState("dark");
   // Tracks or Artists
   const [resultsType, setResultsType] = useState("");
@@ -30,10 +35,28 @@ const App = (props) => {
   const [userTopList, setUserTopList] = useState([]);
   // Length of array (20 or 50)
   const [resultsLength, setResultsLength] = useState(20);
+  // User ID
+  const [userID, setUserID] = useState("");
   // Array of the tracks URIs in the displayed list (used to create playlist)
   const [trackURIs, setTrackURIs] = useState([]);
 
-  console.log(trackURIs);
+  // Funcion to get the User's ID and set the UserID variable (will be called using useEffect hook when the token changes)
+  const getUserID = async () => {
+    const { data } = await axios.get(`https://api.spotify.com/v1/me`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    console.log(data);
+
+    setUserID(data.id);
+  };
+
+  // Calls the getUserID function when the token changes (new user)
+  useEffect(() => {
+    getUserID();
+  }, [token]);
 
   // Fetches the token from the spotify url
   useEffect(() => {
@@ -53,6 +76,7 @@ const App = (props) => {
     setToken(token);
   });
 
+  // Function to update the color theme
   const updateTheme = () => {
     dataTheme == "light" ? setDataTheme("dark") : setDataTheme("light");
   };
