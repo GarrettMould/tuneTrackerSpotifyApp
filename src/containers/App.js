@@ -12,21 +12,28 @@ import classes from "./App.module.css";
 
 const App = (props) => {
   //SPOTIFY VARIABLES
-
   const CLIENT_ID = "c2c550a96c8c4dc0a5836d3f479cc850";
-  const REDIRECT_URI = "https://tunetracker.netlify.app/";
+  const REDIRECT_URI = "http://localhost:3000/";
   const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SPACE_DELIMITER = "%20";
   const SCOPES = ["user-top-read", "user-read-private"];
   const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 
+  //
   const [dataTheme, setDataTheme] = useState("dark");
+  // Tracks or Artists
   const [resultsType, setResultsType] = useState("");
+  //Last Month, Six Months, All Time
   const [timeFrame, setTimeFrame] = useState("");
   const [token, setToken] = useState("");
   const [userTopList, setUserTopList] = useState([]);
+  // Length of array (20 or 50)
   const [resultsLength, setResultsLength] = useState(20);
+  // Array of the tracks URIs in the displayed list (used to create playlist)
+  const [trackURIs, setTrackURIs] = useState([]);
+
+  console.log(trackURIs);
 
   // Fetches the token from the spotify url
   useEffect(() => {
@@ -82,6 +89,10 @@ const App = (props) => {
     console.log(data);
     console.log(resultsLength);
     console.log(userTopList);
+
+    var uris = data.items.map((a) => a.uri);
+
+    setTrackURIs(uris);
   };
 
   // Function to retreive expanded search results and display them
@@ -107,6 +118,10 @@ const App = (props) => {
     setResultsLength(data.limit);
 
     console.log(data);
+
+    var uris = data.items.map((a) => a.uri);
+
+    setTrackURIs(uris);
   };
 
   var resultsGiven = userTopList;
