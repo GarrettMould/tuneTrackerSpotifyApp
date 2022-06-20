@@ -5,6 +5,7 @@ import HeaderMobile from "../components/HeaderMobile/HeaderMobile";
 import MainPageMobile from "../components/MainPageMobile/MainPageMobile";
 
 import Media from "react-media";
+import { format, add } from "date-fns";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -87,6 +88,42 @@ const App = (props) => {
     setTimeFrame("");
 
     window.localStorage.removeItem("token");
+  };
+
+  // Function to create a new playlist
+
+  const createPlaylist = async () => {
+    var date = format(new Date(), "MMM do");
+    var playlistTimeFrame;
+    var playlistName;
+
+    timeFrame == "short_term"
+      ? (playlistTimeFrame = "This Month")
+      : timeFrame == "medium_term"
+      ? (playlistTimeFrame = "the Past Six Months")
+      : (playlistTimeFrame = "All Time");
+
+    playlistName = `Top Tracks of ${playlistTimeFrame} (${date})`;
+
+    console.log(playlistName);
+    console.log(userID);
+    console.log(token);
+
+    const { data } = await axios.post(
+      `	https://api.spotify.com/v1/playlists/7e1g1ydpbLSu9lesBRkwBp/tracks`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        params: {
+          uris: [trackURIs],
+          position: 0,
+        },
+      }
+    );
+
+    console.log(data);
   };
 
   // Function to retreive search results and display them
@@ -204,6 +241,7 @@ const App = (props) => {
                 timeFrame={timeFrame}
                 resultsLength={resultsLength}
                 userTopList={userTopList}
+                createPlaylist={createPlaylist}
                 searchArtists={searchArtists}
                 searchArtistsExpand={searchArtistsExpand}
               ></MainPageDesktop>

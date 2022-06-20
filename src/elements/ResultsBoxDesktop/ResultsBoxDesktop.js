@@ -1,3 +1,4 @@
+import CreatePlaylistButtonDesktop from "../CreatePlaylistButtonDesktop/CreatePlaylistButtonDesktop";
 import ShowLessButtonDesktop from "../ShowLessButtonDesktop/ShowLessButtonDesktop";
 import LoadMoreButtonDesktop from "../LoadMoreButtonDesktop/LoadMoreButtonDesktop";
 import { Card, Container, Col, Row } from "react-bootstrap";
@@ -85,6 +86,9 @@ const ResultsBoxDesktop = (props) => {
           <>
             <Row className={classes.row}>{results}</Row>
             {button}
+            <CreatePlaylistButtonDesktop
+              createPlaylist={props.createPlaylist}
+            ></CreatePlaylistButtonDesktop>
           </>
         )}
       </Container>

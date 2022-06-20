@@ -30,6 +30,7 @@ const MainPageLeftBlockDesktop = (props) => {
         token={props.token}
         userTopList={props.userTopList}
         resultsGiven={props.resultsGiven}
+        createPlaylist={props.createPlaylist}
         searchArtists={props.searchArtists}
         searchArtistsExpand={props.searchArtistsExpand}
       ></ResultsBoxDesktop>
