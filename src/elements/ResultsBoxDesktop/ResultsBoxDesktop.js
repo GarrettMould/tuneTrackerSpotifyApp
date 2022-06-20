@@ -86,9 +86,6 @@ const ResultsBoxDesktop = (props) => {
           <>
             <Row className={classes.row}>{results}</Row>
             {button}
-            <CreatePlaylistButtonDesktop
-              createPlaylist={props.createPlaylist}
-            ></CreatePlaylistButtonDesktop>
           </>
         )}
       </Container>

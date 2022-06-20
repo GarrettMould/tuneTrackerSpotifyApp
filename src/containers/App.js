@@ -92,7 +92,7 @@ const App = (props) => {
 
   // Function to create a new playlist
 
-  const createPlaylist = async () => {
+  /*const createPlaylist = async () => {
     var date = format(new Date(), "MMM do");
     var playlistTimeFrame;
     var playlistName;
@@ -110,21 +110,23 @@ const App = (props) => {
     console.log(token);
 
     const { data } = await axios.post(
-      `	https://api.spotify.com/v1/playlists/7e1g1ydpbLSu9lesBRkwBp/tracks`,
+      `		https://api.spotify.com/v1/users/${userID}/playlists`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
         params: {
-          uris: [trackURIs],
-          position: 0,
+          name: `${playlistName}`,
+          description: "",
+          public: false,
+          collaborative: false,
         },
       }
     );
 
     console.log(data);
-  };
+  };*/
 
   // Function to retreive search results and display them
   const searchArtists = async (results, time) => {
@@ -241,7 +243,7 @@ const App = (props) => {
                 timeFrame={timeFrame}
                 resultsLength={resultsLength}
                 userTopList={userTopList}
-                createPlaylist={createPlaylist}
+                // createPlaylist={createPlaylist}
                 searchArtists={searchArtists}
                 searchArtistsExpand={searchArtistsExpand}
               ></MainPageDesktop>
