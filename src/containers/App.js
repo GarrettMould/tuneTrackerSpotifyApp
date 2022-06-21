@@ -243,7 +243,6 @@ const App = (props) => {
                 timeFrame={timeFrame}
                 resultsLength={resultsLength}
                 userTopList={userTopList}
-                // createPlaylist={createPlaylist}
                 searchArtists={searchArtists}
                 searchArtistsExpand={searchArtistsExpand}
               ></MainPageDesktop>

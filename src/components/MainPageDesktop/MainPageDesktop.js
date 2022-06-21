@@ -17,7 +17,6 @@ const MainPageDesktop = (props) => {
             userTopList={props.userTopList}
             resultsLength={props.resultsLength}
             timeFrame={props.timeFrame}
-            //createPlaylist={props.createPlaylist}
             searchArtists={props.searchArtists}
             searchArtistsExpand={props.searchArtistsExpand}
           ></MainPageLeftBlockDesktop>
