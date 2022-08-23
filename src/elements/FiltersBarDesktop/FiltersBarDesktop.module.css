@@ -1,0 +1,52 @@
+.padding {
+  padding-top: 3%;
+  width: 100%;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block {
+  height: 20px;
+  width: 2px;
+  background-color: var(--secondary);
+}
+
+.searchTypeContainer {
+  display: flex;
+  margin-right: 2%;
+}
+
+.timeFrameContainer {
+  margin-left: 2%;
+  display: flex;
+}
+
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active {
+  font-size: 120% !important;
+  font-weight: 600 !important;
+  background-color: transparent !important;
+  color: var(--secondary) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.btnActive,
+.btnActive:hover,
+.btnActive:focus,
+.btnActive:active {
+  font-size: 120% !important;
+  font-weight: 600 !important;
+  background-color: transparent !important;
+  color: var(--primary-green) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}

@@ -1,0 +1,20 @@
+body {
+  background-color: var(--primary);
+}
+ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+li {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+a:hover {
+  color: var(--secondary);
+}

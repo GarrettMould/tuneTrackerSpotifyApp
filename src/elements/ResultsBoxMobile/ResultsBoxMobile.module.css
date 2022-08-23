@@ -1,0 +1,55 @@
+.background {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  width: 95%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.column {
+  padding-bottom: 3%;
+}
+
+.row > * {
+  padding-left: 1.5% !important;
+  padding-right: 1.5% !important;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  width: 108.183px; 
+  height: 108.183px;
+  border-radius: 5%;
+}
+
+.nameContainer {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.number {
+  color: var(--grey);
+  font-size: 90%;
+  font-weight: 600;
+}
+.name {
+  color: var(--secondary);
+  white-space: nowrap;
+  padding-top: 5%;
+  font-size: 80%;
+  font-weight: 600;
+}
+
+.secondaryName {
+  font-size: 70%;
+  font-weight: 500;
+  color: var(--grey);
+}
