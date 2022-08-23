@@ -5,6 +5,7 @@
 }
 .btn {
   width: 50% !important;
+  height: 45px;
   font-size: 1.1rem !important;
   font-family: 500 !important;
   background-color: var(--primary-green) !important;

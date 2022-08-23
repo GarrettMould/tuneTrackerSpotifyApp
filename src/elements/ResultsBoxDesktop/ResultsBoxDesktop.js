@@ -1,5 +1,4 @@
 import CreatePlaylistButtonDesktop from "../CreatePlaylistButtonDesktop/CreatePlaylistButtonDesktop";
-import ShowLessButtonDesktop from "../ShowLessButtonDesktop/ShowLessButtonDesktop";
 import LoadMoreButtonDesktop from "../LoadMoreButtonDesktop/LoadMoreButtonDesktop";
 import { Card, Container, Col, Row } from "react-bootstrap";
 import classes from "./ResultsBoxDesktop.module.css";
@@ -11,21 +10,8 @@ const ResultsBoxDesktop = (props) => {
   var resultsLength = props.resultsLength;
   var button;
 
-  resultsLength == 20
-    ? (button = (
-        <LoadMoreButtonDesktop
-          resultsType={props.resultsType}
-          timeFrame={props.timeFrame}
-          searchArtistsExpand={props.searchArtistsExpand}
-        ></LoadMoreButtonDesktop>
-      ))
-    : (button = (
-        <ShowLessButtonDesktop
-          resultsType={props.resultsType}
-          timeFrame={props.timeFrame}
-          searchArtists={props.searchArtists}
-        ></ShowLessButtonDesktop>
-      ));
+
+
 
   {
     props.resultsType == "tracks"
@@ -85,7 +71,14 @@ const ResultsBoxDesktop = (props) => {
         ) : (
           <>
             <Row className={classes.row}>{results}</Row>
-            {button}
+            <LoadMoreButtonDesktop 
+            resultsLength={props.resultsLength} 
+            resultsType={props.resultsType}
+            timeFrame={props.timeFrame}
+            searchArtistsExpand={props.searchArtistsExpand}
+            searchArtists={props.searchArtists}>
+
+            </LoadMoreButtonDesktop>
           </>
         )}
       </Container>

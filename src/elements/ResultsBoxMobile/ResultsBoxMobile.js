@@ -11,21 +11,7 @@ const ResultsBoxMobile = (props) => {
   var resultsLength = props.resultsLength;
   var button;
 
-  resultsLength == 20
-    ? (button = (
-        <LoadMoreButtonMobile
-          resultsType={props.resultsType}
-          timeFrame={props.timeFrame}
-          searchArtistsExpand={props.searchArtistsExpand}
-        ></LoadMoreButtonMobile>
-      ))
-    : (button = (
-        <ShowLessButtonMobile
-          resultsType={props.resultsType}
-          timeFrame={props.timeFrame}
-          searchArtists={props.searchArtists}
-        ></ShowLessButtonMobile>
-      ));
+  
 
   {
     props.resultsType == "tracks"
@@ -85,7 +71,12 @@ const ResultsBoxMobile = (props) => {
         ) : (
           <>
             <Row className={classes.row}>{results}</Row>
-            {button}
+            <LoadMoreButtonMobile 
+            resultsLength={props.resultsLength} 
+            resultsType={props.resultsType}
+            timeFrame={props.timeFrame}
+            searchArtistsExpand={props.searchArtistsExpand}
+            searchArtists={props.searchArtists}></LoadMoreButtonMobile>
           </>
         )}
       </Container>
