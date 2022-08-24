@@ -12,6 +12,7 @@ const MainPageDesktop = (props) => {
         <>
           <MainPageLeftBlockDesktop
             token={props.token}
+            createPlaylistL={props.createPlaylistL}
             resultsGiven={props.resultsGiven}
             resultsType={props.resultsType}
             userTopList={props.userTopList}

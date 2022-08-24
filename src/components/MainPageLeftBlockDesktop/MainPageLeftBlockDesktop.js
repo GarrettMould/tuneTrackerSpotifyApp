@@ -24,6 +24,7 @@ const MainPageLeftBlockDesktop = (props) => {
       )}
 
       <ResultsBoxDesktop
+        createPlaylistL={props.createPlaylistL}
         resultsType={props.resultsType}
         timeFrame={props.timeFrame}
         resultsLength={props.resultsLength}

@@ -79,3 +79,8 @@
   border: none !important;
   box-shadow: none !important;
 }
+
+.btn:hover { 
+  background-color: var(--hover-green) !important;
+  transition: background-color 500ms linear;
+}

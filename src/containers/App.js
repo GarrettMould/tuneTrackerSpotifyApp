@@ -38,8 +38,13 @@ const App = (props) => {
   const [resultsLength, setResultsLength] = useState(20);
   // User ID
   const [userID, setUserID] = useState("");
+  // ID of the created playlist 
+  const [playlistID, setPlaylistID] = useState("");
   // Array of the tracks URIs in the displayed list (used to create playlist)
   const [trackURIs, setTrackURIs] = useState([]);
+
+
+  console.log(trackURIs);
 
   // Funcion to get the User's ID and set the UserID variable (will be called using useEffect hook when the token changes)
   const getUserID = async () => {
@@ -93,14 +98,29 @@ const App = (props) => {
 
   // Function to create a new playlist
 
-  /*const createPlaylist = async () => {
+  const addSongsToPlaylist = async (songs) => {
+    return await axios({
+      method: "post",
+      url: `https://api.spotify.com/v1/playlists/${playlistID}/tracks`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      data: {
+        uris: songs,
+      },
+    });
+  };
+
+  const createPlaylistL = async () => {
     var date = format(new Date(), "MMM do");
+    console.log(date);
     var playlistTimeFrame;
     var playlistName;
 
-    timeFrame == "short_term"
+    timeFrame === "short_term"
       ? (playlistTimeFrame = "This Month")
-      : timeFrame == "medium_term"
+      : timeFrame === "medium_term"
       ? (playlistTimeFrame = "the Past Six Months")
       : (playlistTimeFrame = "All Time");
 
@@ -110,24 +130,28 @@ const App = (props) => {
     console.log(userID);
     console.log(token);
 
-    const { data } = await axios.post(
-      `		https://api.spotify.com/v1/users/${userID}/playlists`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        params: {
-          name: `${playlistName}`,
+    const { data } = await axios({
+      method: 'post',
+      url: `https://api.spotify.com/v1/users/${userID}/playlists`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      data: { 
+        name: `${playlistName}`,
           description: "",
           public: false,
           collaborative: false,
-        },
       }
+    }
     );
-
+    //Basically, the playlist fills with songs on the second click, because on the first click, the state hasn't been updated yet
+    setPlaylistID(data.id);
+    addSongsToPlaylist(trackURIs);
     console.log(data);
-  };*/
+
+     
+  };
 
   // Function to retreive search results and display them
   const searchArtists = async (results, time) => {
@@ -230,6 +254,7 @@ const App = (props) => {
                 token={token}
               ></HeaderDesktop>
               <MainPageDesktop
+                createPlaylistL={createPlaylistL}
                 dataTheme={dataTheme}
                 CLIENT_ID={CLIENT_ID}
                 REDIRECT_URI={REDIRECT_URI}

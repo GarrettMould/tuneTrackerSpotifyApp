@@ -44,7 +44,7 @@ const FiltersBarDesktop = (props) => {
           <div className={classes.searchTypeTracks}>
             <Button
               className={
-                activeResults == "artists" ? classes.btnActive : classes.btn
+                activeResults === "artists" ? classes.btnActive : classes.btn
               }
               value={"artists"}
               onClick={updateResultsType}

@@ -26,7 +26,6 @@
 }
 
 .btn,
-.btn:hover,
 .btn:focus,
 .btn:active {
   font-size: 120% !important;
@@ -36,6 +35,11 @@
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
+}
+
+.btn:hover { 
+  transition: background-color 250ms linear;
+  background-color:  	rgba(128,128,128, 0.75) !important;
 }
 
 .btnActive,

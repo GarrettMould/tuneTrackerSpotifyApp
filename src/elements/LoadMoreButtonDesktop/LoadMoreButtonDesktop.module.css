@@ -13,3 +13,8 @@
   border: none !important;
   box-shadow: none !important;
 }
+
+.btn:hover { 
+  transition: background-color 250ms linear;
+  background-color: var(--hover-green) !important;
+}

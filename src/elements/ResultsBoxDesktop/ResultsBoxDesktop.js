@@ -79,6 +79,7 @@ const ResultsBoxDesktop = (props) => {
             searchArtists={props.searchArtists}>
 
             </LoadMoreButtonDesktop>
+            <CreatePlaylistButtonDesktop token={props.token} createPlaylistL={props.createPlaylistL}></CreatePlaylistButtonDesktop>
           </>
         )}
       </Container>
