@@ -10,6 +10,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import classes from "./App.module.css";
+import PlaylistPopUpDesktop from "../components/PlaylistPopUpDesktop/PlaylistPopUpDesktop";
 
 const App = (props) => {
   //SPOTIFY VARIABLES
@@ -42,6 +43,8 @@ const App = (props) => {
   const [playlistID, setPlaylistID] = useState("");
   // Array of the tracks URIs in the displayed list (used to create playlist)
   const [trackURIs, setTrackURIs] = useState([]);
+  // Did the user click the "create playlist" button
+  const [playlistPopUp, setPlaylistPopUp] = useState(false);
 
 
   console.log(trackURIs);
@@ -112,11 +115,18 @@ const App = (props) => {
     });
   };
 
+  const togglePopUp = () => { 
+    {playlistPopUp === true ? setPlaylistPopUp(false) : setPlaylistPopUp(true)}
+  }
+
+
   const createPlaylistL = async () => {
     var date = format(new Date(), "MMM do");
     console.log(date);
     var playlistTimeFrame;
     var playlistName;
+
+
 
     timeFrame === "short_term"
       ? (playlistTimeFrame = "This Month")
@@ -145,13 +155,22 @@ const App = (props) => {
       }
     }
     );
-    //Basically, the playlist fills with songs on the second click, because on the first click, the state hasn't been updated yet
+    
+     //Basically, the playlist fills with songs on the second click, because on the first click, the state hasn't been updated yet
     setPlaylistID(data.id);
-    addSongsToPlaylist(trackURIs);
     console.log(data);
 
-     
   };
+
+  const clearPlaylistData = () => { 
+    setPlaylistID(""); 
+    setPlaylistPopUp(false);
+  }
+
+  const handlePlaylistCreate = () => { 
+    console.log("create playlist selected")
+    createPlaylistL().then(addSongsToPlaylist(trackURIs)).then(clearPlaylistData);
+  }
 
   // Function to retreive search results and display them
   const searchArtists = async (results, time) => {
@@ -215,7 +234,10 @@ const App = (props) => {
   var resultsGiven = userTopList;
 
   return (
+    <div className={classes.wrapper}>
     <div data-theme={dataTheme}>
+      {playlistPopUp === true ? <PlaylistPopUpDesktop createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUpDesktop> : null}
+      <div className={playlistPopUp === true ? classes.opacity : null}>
       <Media queries={{ small: { maxWidth: 599 } }}>
         {(matches) =>
           matches.small ? (
@@ -227,6 +249,8 @@ const App = (props) => {
                 token={token}
               ></HeaderMobile>
               <MainPageMobile
+                togglePopUp={togglePopUp}
+                handlePlaylistCreate={handlePlaylistCreate}
                 dataTheme={dataTheme}
                 CLIENT_ID={CLIENT_ID}
                 REDIRECT_URI={REDIRECT_URI}
@@ -254,6 +278,8 @@ const App = (props) => {
                 token={token}
               ></HeaderDesktop>
               <MainPageDesktop
+                togglePopUp={togglePopUp}
+                handlePlaylistCreate={handlePlaylistCreate}
                 createPlaylistL={createPlaylistL}
                 dataTheme={dataTheme}
                 CLIENT_ID={CLIENT_ID}
@@ -276,6 +302,8 @@ const App = (props) => {
           )
         }
       </Media>
+        </div>
+      </div>
     </div>
   );
 };

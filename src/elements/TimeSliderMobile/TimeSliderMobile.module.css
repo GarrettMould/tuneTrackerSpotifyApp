@@ -6,6 +6,13 @@
   align-items: center;
 }
 
+.timeFrameBigContainer { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .timeFrame {
   color: var(--secondary);
   font-size: 220%;
@@ -23,4 +30,16 @@
   display: flex;
   flex-direction: column;
   margin: 0% 5%;
+}
+
+.playlistIconContainer { 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%; 
+  background-color: #1db954; 
+  margin-top: 2%;
+  margin-left: 20px;
 }

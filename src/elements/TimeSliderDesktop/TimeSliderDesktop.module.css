@@ -15,4 +15,24 @@
 
 .timeFrameContainer {
   margin: 0% 5%;
+  display: flex; 
+  justify-content: space-around;
+  align-items: center;
+}
+
+.playlistIconContainer { 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  width: 45px; 
+  height: 45px;
+  border-radius: 50%; 
+  background-color: #1db954; 
+  margin-top: 1%;
+  margin-left: 20px;
+}
+
+.playlistIconContainer:hover { 
+  cursor: pointer;
+  background-color: #1bcb59;
 }

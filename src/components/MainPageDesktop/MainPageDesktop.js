@@ -11,6 +11,8 @@ const MainPageDesktop = (props) => {
       {loggedIn ? (
         <>
           <MainPageLeftBlockDesktop
+            togglePopUp={props.togglePopUp}
+            handlePlaylistCreate={props.handlePlaylistCreate}
             token={props.token}
             createPlaylistL={props.createPlaylistL}
             resultsGiven={props.resultsGiven}

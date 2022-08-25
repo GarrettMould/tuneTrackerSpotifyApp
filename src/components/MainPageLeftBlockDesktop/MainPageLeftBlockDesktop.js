@@ -10,6 +10,10 @@ const MainPageLeftBlockDesktop = (props) => {
       {hasUserSearched ? (
         <>
           <TimeSliderDesktop
+            togglePopUp={props.togglePopUp}
+            token={props.token}
+            createPlaylistL={props.createPlaylistL}
+            handlePlaylistCreate={props.handlePlaylistCreate}
             resultsType={props.resultsType}
             timeFrame={props.timeFrame}
           ></TimeSliderDesktop>
@@ -24,6 +28,7 @@ const MainPageLeftBlockDesktop = (props) => {
       )}
 
       <ResultsBoxDesktop
+        handlePlaylistCreate={props.handlePlaylistCreate}
         createPlaylistL={props.createPlaylistL}
         resultsType={props.resultsType}
         timeFrame={props.timeFrame}

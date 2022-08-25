@@ -1,4 +1,3 @@
-import CreatePlaylistButtonDesktop from "../CreatePlaylistButtonDesktop/CreatePlaylistButtonDesktop";
 import LoadMoreButtonDesktop from "../LoadMoreButtonDesktop/LoadMoreButtonDesktop";
 import { Card, Container, Col, Row } from "react-bootstrap";
 import classes from "./ResultsBoxDesktop.module.css";
@@ -79,7 +78,6 @@ const ResultsBoxDesktop = (props) => {
             searchArtists={props.searchArtists}>
 
             </LoadMoreButtonDesktop>
-            <CreatePlaylistButtonDesktop token={props.token} createPlaylistL={props.createPlaylistL}></CreatePlaylistButtonDesktop>
           </>
         )}
       </Container>
