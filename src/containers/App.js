@@ -43,6 +43,10 @@ const App = (props) => {
   const [playlistID, setPlaylistID] = useState("");
   // Array of the tracks URIs in the displayed list (used to create playlist)
   const [trackURIs, setTrackURIs] = useState([]);
+// Created Playlist Name
+  const [playlistName, setPlaylistName] = useState("");
+  // Created Playlist Time Frame
+  const [playlistTimeFrame, setPlaylistTimeFrame] = useState("");
   // Did the user click the "create playlist" button
   const [playlistPopUp, setPlaylistPopUp] = useState(false);
 
@@ -66,6 +70,16 @@ const App = (props) => {
   useEffect(() => {
     getUserID();
   }, [token]);
+
+  // Disable scroll when pop up is open
+  useEffect(() => {
+    if (playlistPopUp) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [playlistPopUp]);
 
   // Fetches the token from the spotify url
   useEffect(() => {
@@ -117,28 +131,29 @@ const App = (props) => {
 
   const togglePopUp = () => { 
     {playlistPopUp === true ? setPlaylistPopUp(false) : setPlaylistPopUp(true)}
-  }
 
-
-  const createPlaylistL = async () => {
     var date = format(new Date(), "MMM do");
     console.log(date);
-    var playlistTimeFrame;
+    var playlistTimeFrameLocal;
     var playlistName;
 
 
 
     timeFrame === "short_term"
-      ? (playlistTimeFrame = "This Month")
+      ? (playlistTimeFrameLocal = "This Month")
       : timeFrame === "medium_term"
-      ? (playlistTimeFrame = "the Past Six Months")
-      : (playlistTimeFrame = "All Time");
+      ? (playlistTimeFrameLocal = "the Past Six Months")
+      : (playlistTimeFrameLocal = "All Time");
 
-    playlistName = `Top Tracks of ${playlistTimeFrame} (${date})`;
 
-    console.log(playlistName);
-    console.log(userID);
-    console.log(token);
+    playlistName = `Top Tracks of ${playlistTimeFrameLocal} (${date})`;
+
+    setPlaylistTimeFrame(playlistTimeFrameLocal);
+    setPlaylistName(playlistName);
+  }
+
+
+  const createPlaylistL = async () => {
 
     const { data } = await axios({
       method: 'post',
@@ -236,7 +251,7 @@ const App = (props) => {
   return (
     <div className={classes.wrapper}>
     <div data-theme={dataTheme}>
-      {playlistPopUp === true ? <PlaylistPopUpDesktop createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUpDesktop> : null}
+      {playlistPopUp === true ? <PlaylistPopUpDesktop resultsType={resultsType} resultsGiven={resultsGiven} playlistTimeFrame={playlistTimeFrame} playlistName={playlistName} createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUpDesktop> : null}
       <div className={playlistPopUp === true ? classes.opacity : null}>
       <Media queries={{ small: { maxWidth: 599 } }}>
         {(matches) =>

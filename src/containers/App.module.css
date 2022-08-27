@@ -4,8 +4,9 @@
   height: 100%; 
 }
 
-.opacity { 
-  opacity: 60%;
+.opacity {
+  transition: opacity 100ms; 
+  opacity: 80%;
 }
 
 body {
