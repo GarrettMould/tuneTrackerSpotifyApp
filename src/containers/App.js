@@ -66,6 +66,11 @@ const App = (props) => {
     setUserID(data.id);
   };
 
+  useEffect(()=>{
+    //call function when something change in state
+    addSongsToPlaylist(trackURIs);
+  },[playlistID])
+
   // Calls the getUserID function when the token changes (new user)
   useEffect(() => {
     getUserID();
@@ -102,7 +107,7 @@ const App = (props) => {
 
   // Function to update the color theme
   const updateTheme = () => {
-    dataTheme == "light" ? setDataTheme("dark") : setDataTheme("light");
+    dataTheme === "light" ? setDataTheme("dark") : setDataTheme("light");
   };
   // Function to clear token and clear results display
   const logout = () => {
@@ -116,6 +121,7 @@ const App = (props) => {
   // Function to create a new playlist
 
   const addSongsToPlaylist = async (songs) => {
+    console.log(playlistID);
     return await axios({
       method: "post",
       url: `https://api.spotify.com/v1/playlists/${playlistID}/tracks`,
@@ -136,6 +142,7 @@ const App = (props) => {
     console.log(date);
     var playlistTimeFrameLocal;
     var playlistName;
+    console.log(trackURIs);
 
 
 
@@ -172,14 +179,17 @@ const App = (props) => {
     );
     
      //Basically, the playlist fills with songs on the second click, because on the first click, the state hasn't been updated yet
+    
     setPlaylistID(data.id);
     console.log(data);
+
 
   };
 
   const clearPlaylistData = () => { 
     setPlaylistID(""); 
     setPlaylistPopUp(false);
+    console.log("cleared playlist data");
   }
 
   const handlePlaylistCreate = () => { 

@@ -42,7 +42,7 @@ const PlaylistPopUpDesktop = (props) => {
         <div className={classes.popUpContainer}>
             <div className={classes.relativeWrapper}>
             <div className={classes.buttonsContainer}>
-                    <button className={classes.btn} onClick={props.handlePlaylistCreate}>Create</button>
+                    <button className={classes.btn} onClick={props.createPlaylistL}>Create</button>
                 </div>
             <div className={classes.contentContainer}>
                 <div className={classes.playlistInfoWrapper}>
