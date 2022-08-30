@@ -66,9 +66,11 @@ const App = (props) => {
     setUserID(data.id);
   };
 
+
+// Adds songs to playlist when a new playlist has been created
   useEffect(()=>{
-    //call function when something change in state
     addSongsToPlaylist(trackURIs);
+    clearPlaylistData();
   },[playlistID])
 
   // Calls the getUserID function when the token changes (new user)
@@ -121,7 +123,7 @@ const App = (props) => {
   // Function to create a new playlist
 
   const addSongsToPlaylist = async (songs) => {
-    console.log(playlistID);
+    ;
     return await axios({
       method: "post",
       url: `https://api.spotify.com/v1/playlists/${playlistID}/tracks`,
@@ -133,6 +135,8 @@ const App = (props) => {
         uris: songs,
       },
     });
+
+    
   };
 
   const togglePopUp = () => { 
