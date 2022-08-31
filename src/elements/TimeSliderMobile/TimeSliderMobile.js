@@ -12,7 +12,7 @@ const TimeSliderMobile = (props) => {
           <div className={classes.timeFrame}>
             Top {results === "tracks" ? "Tracks" : "Artists"}{" "}
           </div>
-          {results === "tracks" ? <div className={classes.playlistIconContainer} onClick={() => props.handlePlaylistCreate(props.token)}><Playlist size={27.5} color="#121212"  /></div> : null}
+          {results === "tracks" ? <div className={classes.playlistIconContainer} onClick={() => props.togglePopUp()}><Playlist size={22.5} color="#121212"  /></div> : null}
         </div>
         
         <div className={classes.timeFrameSmall}>

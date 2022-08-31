@@ -1,6 +1,6 @@
 import HeaderDesktop from "../components/HeaderDesktop/HeaderDesktop";
 import MainPageDesktop from "../components/MainPageDesktop/MainPageDesktop";
-
+import PlaylistPopUp from "../components/PlaylistPopUp/PlaylistPopUp";
 import HeaderMobile from "../components/HeaderMobile/HeaderMobile";
 import MainPageMobile from "../components/MainPageMobile/MainPageMobile";
 
@@ -265,7 +265,7 @@ const App = (props) => {
   return (
     <div className={classes.wrapper}>
     <div data-theme={dataTheme}>
-      {playlistPopUp === true ? <PlaylistPopUpDesktop resultsType={resultsType} resultsGiven={resultsGiven} playlistTimeFrame={playlistTimeFrame} playlistName={playlistName} createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUpDesktop> : null}
+      {playlistPopUp === true ? <PlaylistPopUp resultsType={resultsType} resultsGiven={resultsGiven} playlistTimeFrame={playlistTimeFrame} playlistName={playlistName} createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUp> : null}
       <div className={playlistPopUp === true ? classes.opacity : null}>
       <Media queries={{ small: { maxWidth: 599 } }}>
         {(matches) =>

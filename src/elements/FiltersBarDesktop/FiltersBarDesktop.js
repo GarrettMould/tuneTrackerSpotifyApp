@@ -58,7 +58,7 @@ const FiltersBarDesktop = (props) => {
           <div className={classes.timeFrameShort}>
             <Button
               className={
-                activeTime == "short_term" ? classes.btnActive : classes.btn
+                activeTime === "short_term" ? classes.btnActive : classes.btn
               }
               id="short_term"
               onClick={updateTime}
@@ -69,7 +69,7 @@ const FiltersBarDesktop = (props) => {
           <div className={classes.timeFrameMedium}>
             <Button
               className={
-                activeTime == "medium_term" ? classes.btnActive : classes.btn
+                activeTime === "medium_term" ? classes.btnActive : classes.btn
               }
               id="medium_term"
               onClick={updateTime}
@@ -80,7 +80,7 @@ const FiltersBarDesktop = (props) => {
           <div className={classes.timeFrameLong}>
             <Button
               className={
-                activeTime == "long_term" ? classes.btnActive : classes.btn
+                activeTime === "long_term" ? classes.btnActive : classes.btn
               }
               id="long_term"
               onClick={updateTime}

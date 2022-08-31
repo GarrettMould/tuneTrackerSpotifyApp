@@ -10,6 +10,8 @@ const MainPageLeftBlockMobile = (props) => {
       {hasUserSearched ? (
         <>
           <TimeSliderMobile
+            togglePopUp={props.togglePopUp}
+            handlePlaylistCreate={props.handlePlaylistCreate}
             resultsType={props.resultsType}
             timeFrame={props.timeFrame}
           ></TimeSliderMobile>

@@ -9,6 +9,8 @@ const MainPageMobile = (props) => {
       {loggedIn ? (
         <>
           <MainPageLeftBlockMobile
+          togglePopUp={props.togglePopUp}
+          handlePlaylistCreate={props.handlePlaylistCreate}
             token={props.token}
             resultsGiven={props.resultsGiven}
             resultsType={props.resultsType}

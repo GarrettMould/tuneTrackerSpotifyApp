@@ -9,7 +9,6 @@
 .timeFrameBigContainer { 
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
 }
 
@@ -36,10 +35,15 @@
   display: flex; 
   justify-content: center;
   align-items: center;
-  width: 40px; 
-  height: 40px;
+  width: 35px; 
+  height: 35px;
   border-radius: 50%; 
   background-color: #1db954; 
   margin-top: 2%;
   margin-left: 20px;
+}
+
+.playlistIconContainer:hover { 
+  cursor: pointer;
+  background-color: #1bcb59;
 }
