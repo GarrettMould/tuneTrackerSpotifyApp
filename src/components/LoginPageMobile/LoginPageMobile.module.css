@@ -28,12 +28,12 @@
 .smallTitle {
   font-size: 150%;
   color: grey;
-  margin-bottom: 6%;
+  margin-bottom: 8%;
 }
 .btn {
   width: 250px !important;
   height: 50px !important;
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important;
   font-weight: 500 !important;
   border-radius: 10px !important;
   background-color: var(--primary-green) !important;
