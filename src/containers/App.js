@@ -265,7 +265,7 @@ const App = (props) => {
   return (
     <div className={classes.wrapper}>
     <div data-theme={dataTheme}>
-      {playlistPopUp === true ? <PlaylistPopUp resultsType={resultsType} resultsGiven={resultsGiven} playlistTimeFrame={playlistTimeFrame} playlistName={playlistName} createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUp> : null}
+      {playlistPopUp === true && userTopList.length ? <PlaylistPopUp resultsType={resultsType} resultsGiven={resultsGiven} playlistTimeFrame={playlistTimeFrame} playlistName={playlistName} createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUp> : null}
       <div className={playlistPopUp === true ? classes.opacity : null}>
       <Media queries={{ small: { maxWidth: 599 } }}>
         {(matches) =>
