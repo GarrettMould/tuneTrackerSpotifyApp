@@ -15,7 +15,7 @@ import PlaylistPopUpDesktop from "../components/PlaylistPopUpDesktop/PlaylistPop
 const App = (props) => {
   //SPOTIFY VARIABLES
   const CLIENT_ID = "c2c550a96c8c4dc0a5836d3f479cc850";
-  const REDIRECT_URI = "https://tunetracker.netlify.app/";
+  const REDIRECT_URI = "http://localhost:3000/";
   const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SPACE_DELIMITER = "%20";
@@ -49,7 +49,10 @@ const App = (props) => {
   const [playlistTimeFrame, setPlaylistTimeFrame] = useState("");
   // Did the user click the "create playlist" button
   const [playlistPopUp, setPlaylistPopUp] = useState(false);
+ 
+  
 
+  
 
   console.log(trackURIs);
 
@@ -106,6 +109,9 @@ const App = (props) => {
     setToken(token);
     console.log(token);
   });
+
+// Handle toggle of playlist length
+  const togglePlaylistLength = (val) => setResultsLength(val);
 
   // Function to update the color theme
   const updateTheme = () => {
@@ -265,7 +271,7 @@ const App = (props) => {
   return (
     <div className={classes.wrapper}>
     <div data-theme={dataTheme}>
-      {playlistPopUp === true && userTopList.length ? <PlaylistPopUp resultsType={resultsType} resultsGiven={resultsGiven} playlistTimeFrame={playlistTimeFrame} playlistName={playlistName} createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUp> : null}
+      {playlistPopUp === true && userTopList.length ? <PlaylistPopUp resultsLength={resultsLength} resultsType={resultsType} resultsGiven={resultsGiven} playlistTimeFrame={playlistTimeFrame} playlistName={playlistName} createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUp> : null}
       <div className={playlistPopUp === true ? classes.opacity : null}>
       <Media queries={{ small: { maxWidth: 599 } }}>
         {(matches) =>

@@ -8,9 +8,9 @@ const PlaylistPopUp = (props) => {
         <Media queries={{ small: { maxWidth: 599 } }}>
         {matches =>
           matches.small ? (
-            <PlaylistPopUpMobile resultsType={props.resultsType} resultsGiven={props.resultsGiven} playlistTimeFrame={props.playlistTimeFrame} playlistName={props.playlistName} createPlaylistL={props.createPlaylistL} handlePlaylistCreate={props.handlePlaylistCreate} togglePopUp={props.togglePopUp}></PlaylistPopUpMobile>
+            <PlaylistPopUpMobile resultsLength={props.resultsLength} resultsType={props.resultsType} resultsGiven={props.resultsGiven} playlistTimeFrame={props.playlistTimeFrame} playlistName={props.playlistName} createPlaylistL={props.createPlaylistL} handlePlaylistCreate={props.handlePlaylistCreate} togglePopUp={props.togglePopUp}></PlaylistPopUpMobile>
           ) : (
-            <PlaylistPopUpDesktop resultsType={props.resultsType} resultsGiven={props.resultsGiven} playlistTimeFrame={props.playlistTimeFrame} playlistName={props.playlistName} createPlaylistL={props.createPlaylistL} handlePlaylistCreate={props.handlePlaylistCreate} togglePopUp={props.togglePopUp}></PlaylistPopUpDesktop>
+            <PlaylistPopUpDesktop resultsLength={props.resultsLength} resultsType={props.resultsType} resultsGiven={props.resultsGiven} playlistTimeFrame={props.playlistTimeFrame} playlistName={props.playlistName} createPlaylistL={props.createPlaylistL} handlePlaylistCreate={props.handlePlaylistCreate} togglePopUp={props.togglePopUp}></PlaylistPopUpDesktop>
           )
         }
       </Media>

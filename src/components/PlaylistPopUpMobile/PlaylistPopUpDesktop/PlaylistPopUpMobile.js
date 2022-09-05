@@ -4,6 +4,8 @@ import { X } from "phosphor-react";
 
 import { Card, Container, Col, Row } from "react-bootstrap";
 
+import PlaylistLengthToggle from "../../../elements/PlaylistLengthToggle/PlaylistLengthToggle";
+
 const PlaylistPopUpMobile = (props) => {
     var results;
     {
@@ -53,9 +55,12 @@ const PlaylistPopUpMobile = (props) => {
                     </div>
                     <div className={classes.rowTwo}>
                     <div className={classes.messageContainer}>
-                    <div className={classes.message}>{props.playlistName}</div>
-                </div>
+                      <div className={classes.message}>{props.playlistName}</div>
                     </div>
+                    </div>
+                    {/*<div className={classes.rowThree}>
+                      <PlaylistLengthToggle resultsLength={props.resultsLength} togglePlaylistLength={props.togglePlaylistLength}></PlaylistLengthToggle>
+    </div>*/}
                 </div>
                 <div className={classes.resultsContainer}>{results}</div>
             </div>

@@ -93,10 +93,11 @@
   }
 
 .resultsContainer { 
-    height: 1000px;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
   .column {

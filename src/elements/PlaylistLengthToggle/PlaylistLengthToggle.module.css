@@ -1,0 +1,26 @@
+
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active {
+  font-size: 80% !important;
+  font-weight: 600 !important;
+  background-color: transparent !important;
+  color: var(--secondary) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.btnActive,
+.btnActive:hover,
+.btnActive:focus,
+.btnActive:active {
+  font-size: 80% !important;
+  font-weight: 600 !important;
+  background-color: rgba(128,128,128, 0.75) !important;
+  color: var(--primary-green) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}

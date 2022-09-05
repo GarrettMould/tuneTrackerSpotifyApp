@@ -93,10 +93,11 @@
   }
 
 .resultsContainer { 
-    height: 1000px;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
   .column {
@@ -142,4 +143,15 @@
     font-size: 100%;
     font-weight: 500;
     color: var(--grey);
+  }
+
+  .playlistLength { 
+    font-size: 100%;
+    color: var(--grey);
+  }
+
+  .rowThree { 
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10%;
   }
