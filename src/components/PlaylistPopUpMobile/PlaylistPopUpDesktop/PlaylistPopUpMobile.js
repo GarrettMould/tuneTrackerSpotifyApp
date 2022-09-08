@@ -58,9 +58,9 @@ const PlaylistPopUpMobile = (props) => {
                       <div className={classes.message}>{props.playlistName}</div>
                     </div>
                     </div>
-                    {/*<div className={classes.rowThree}>
-                      <PlaylistLengthToggle resultsLength={props.resultsLength} togglePlaylistLength={props.togglePlaylistLength}></PlaylistLengthToggle>
-    </div>*/}
+                    <div className={classes.rowThree}>
+                      <PlaylistLengthToggle resultsType={props.resultsType} timeFrame={props.timeFrame} searchArtists={props.searchArtists} searchArtistsExpand={props.searchArtistsExpand} resultsLength={props.resultsLength} togglePlaylistLength={props.togglePlaylistLength}></PlaylistLengthToggle>
+    </div>
                 </div>
                 <div className={classes.resultsContainer}>{results}</div>
             </div>

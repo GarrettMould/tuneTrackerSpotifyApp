@@ -1,26 +1,49 @@
+.toggleContainer { 
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
 
-.btn,
-.btn:hover,
-.btn:focus,
-.btn:active {
-  font-size: 80% !important;
-  font-weight: 600 !important;
+
+.toggleInactive,
+.toggleInactive:focus,
+.toggleInactive:active {
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  width: 50%;
   background-color: transparent !important;
   color: var(--secondary) !important;
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
+  color: var(--secondary);
 }
 
-.btnActive,
-.btnActive:hover,
-.btnActive:focus,
-.btnActive:active {
-  font-size: 80% !important;
+
+
+.toggleActive,
+.toggleActive:hover,
+.toggleActive:focus,
+.toggleActive:active {
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  width: 50%;
+  border-bottom: 2px solid var(--primary-green);
+  color: var(--primary-green);
+
+}
+
+.trackText { 
+  outline: none; 
+  border: none;
+  padding-bottom: 4%;
+  font-size: 90% !important;
   font-weight: 600 !important;
-  background-color: rgba(128,128,128, 0.75) !important;
-  color: var(--primary-green) !important;
-  outline: none !important;
-  box-shadow: none !important;
-  border: none !important;
+  background-color: transparent !important;
+}
+
+.trackText:hover { 
+  cursor: pointer;
 }

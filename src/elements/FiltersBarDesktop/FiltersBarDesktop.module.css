@@ -47,6 +47,7 @@
 .btnActive:focus,
 .btnActive:active {
   font-size: 120% !important;
+  background-color:  	rgba(128,128,128, 0.75) !important;
   font-weight: 600 !important;
   background-color: transparent !important;
   color: var(--primary-green) !important;
