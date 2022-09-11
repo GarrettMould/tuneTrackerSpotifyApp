@@ -1,6 +1,7 @@
 .popUpContainer { 
     z-index: 999; 
-    background-color: #282828;
+    background-color: #121212;
+    opacity: 100% !important;
     position: fixed;
     top: 0; 
     left: 0;
@@ -93,7 +94,7 @@
   }
 
 .resultsContainer { 
-    height: 70vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -151,7 +152,5 @@
   }
 
   .rowThree { 
-    display: flex;
-    flex-direction: row;
     padding-bottom: 10%;
   }
