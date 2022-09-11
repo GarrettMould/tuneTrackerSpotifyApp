@@ -20,6 +20,16 @@
   color: var(--secondary);
 }
 
+hr {
+  height: 2px;
+  width: 50%;
+  margin: 0;
+  background: var(--primary-green);
+  border: none;
+  transition: .3s ease-in-out;
+}
+
+
 
 
 .toggleActive,
