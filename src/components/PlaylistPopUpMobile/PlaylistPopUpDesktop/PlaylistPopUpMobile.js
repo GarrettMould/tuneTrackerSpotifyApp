@@ -1,3 +1,10 @@
+// Swiper imports
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+
+import { useState } from "react";
+
 import classes from "./PlaylistPopUpMobile.module.css";
 
 import { X } from "phosphor-react";
@@ -7,6 +14,13 @@ import { Card, Container, Col, Row } from "react-bootstrap";
 import PlaylistLengthToggle from "../../../elements/PlaylistLengthToggle/PlaylistLengthToggle";
 
 const PlaylistPopUpMobile = (props) => {
+
+
+
+  const [scrollLock, setScrollLock] = useState(false)
+
+  
+
     var results;
     {
         props.resultsType == "tracks"
@@ -46,7 +60,7 @@ const PlaylistPopUpMobile = (props) => {
             <div className={classes.buttonsContainer}>
                     <button className={classes.btn} onClick={props.createPlaylistL}>Create</button>
                 </div>
-            <div className={classes.contentContainer}>
+              
                 <div className={classes.playlistInfoWrapper}>
                     <div className={classes.rowOne}>
                         <div className={classes.popUpTitle}>Create Spotify Playlist</div>
@@ -62,8 +76,19 @@ const PlaylistPopUpMobile = (props) => {
                       <PlaylistLengthToggle resultsType={props.resultsType} timeFrame={props.timeFrame} searchArtists={props.searchArtists} searchArtistsExpand={props.searchArtistsExpand} resultsLength={props.resultsLength} togglePlaylistLength={props.togglePlaylistLength}></PlaylistLengthToggle>
     </div>
                 </div>
-                <div className={classes.resultsContainer}>{results}</div>
-            </div>
+                <Swiper
+                  spaceBetween={50}
+                  slidesPerView={1}
+                  onTouchStart={() => setScrollLock(true)}
+                  onTouchEnd={() => setScrollLock(false)}
+                  onSwiper={(swiper) => console.log(swiper)}
+                >
+                  <SwiperSlide><div className={classes.slideContainer}><div className={scrollLock ? classes.resultsContainerNoScroll : classes.resultsContainer}>{results}</div></div></SwiperSlide>
+                  <SwiperSlide><div className={classes.slideContainer}><div className={scrollLock ? classes.resultsContainerNoScroll : classes.resultsContainer}>{results}</div></div></SwiperSlide>
+                </Swiper>
+                
+                
+                
             </div>
         </div>
     )

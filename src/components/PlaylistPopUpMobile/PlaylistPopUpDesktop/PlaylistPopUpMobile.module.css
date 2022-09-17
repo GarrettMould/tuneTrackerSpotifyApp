@@ -93,11 +93,26 @@
     transition: background-color 500ms linear;
   }
 
+
+.slideContainer { 
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center;
+}
+
 .resultsContainer { 
     height: 65vh;
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    overflow-x: hidden;
+}
+
+.resultsContainerNoScroll { 
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     overflow-x: hidden;
 }
 
@@ -110,10 +125,7 @@
     padding-right: 1% !important;
   }
   
-  .contentContainer {
-    display: flex;
-    flex-direction: column;
-  }
+ 
   
   .image {
     max-width: 100%;

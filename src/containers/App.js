@@ -4,6 +4,7 @@ import PlaylistPopUp from "../components/PlaylistPopUp/PlaylistPopUp";
 import HeaderMobile from "../components/HeaderMobile/HeaderMobile";
 import MainPageMobile from "../components/MainPageMobile/MainPageMobile";
 
+import 'swiper/css';
 import Media from "react-media";
 import { format, add } from "date-fns";
 import axios from "axios";
@@ -15,7 +16,7 @@ import PlaylistPopUpDesktop from "../components/PlaylistPopUpDesktop/PlaylistPop
 const App = (props) => {
   //SPOTIFY VARIABLES
   const CLIENT_ID = "c2c550a96c8c4dc0a5836d3f479cc850";
-  const REDIRECT_URI = "https://tunetracker.netlify.app/";
+  const REDIRECT_URI = "http://localhost:3000/";
   const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SPACE_DELIMITER = "%20";
