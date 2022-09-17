@@ -14,20 +14,16 @@
     height: 100vh;
 }
 
-.contentContainer { 
-    display: flex; 
-    flex-direction: column;
-    padding: 5%;
-}
 
 .playlistInfoWrapper {
+    padding: 3%;
     display: flex;
     flex-direction: column;
 }
 
-.rowOne { 
+.rowOne, .rowTwo { 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .messageContainer { 
@@ -38,7 +34,7 @@
 
 .popUpTitle { 
     padding-bottom: 4%;
-    font-size: 150%; 
+    font-size: 175%; 
     font-weight: 800;
     color: white; 
 }
@@ -58,26 +54,26 @@
 
 .message { 
     padding-bottom: 8%;
-    font-size: 125%; 
+    font-size: 150%; 
     font-weight: 600;
     color: var(--grey); 
 }
 
 .buttonsContainer { 
     width: 100%; 
-    height: 75px;
+    height: 85px;
     background-color: #282828;
     position: absolute;
     bottom: 0;
     display: flex; 
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .btn {
     color: var(--secondary);
-    width: 90%;
+    width: 45%;
     height: 40px;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -101,6 +97,8 @@
 }
 
 .resultsContainer { 
+  padding-left: 3%;
+  padding-right: 3%;
     height: 65vh;
     display: flex;
     flex-direction: column;
@@ -109,6 +107,8 @@
 }
 
 .resultsContainerNoScroll { 
+  padding-left: 3%;
+  padding-right: 3%;
     height: 65vh;
     display: flex;
     flex-direction: column;
@@ -164,5 +164,5 @@
   }
 
   .rowThree { 
-    padding-bottom: 10%;
+    padding-bottom: 5%;
   }

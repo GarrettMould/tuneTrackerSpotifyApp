@@ -52,7 +52,17 @@ const App = (props) => {
   const [playlistPopUp, setPlaylistPopUp] = useState(false);
  
   
+// Toggle ResultsLength onSlideChange, if resultsLength is 20, set it to 50 and vice versa
+const toggleResultsLength = () => { 
+  if (resultsLength === 20) { 
+    searchArtistsExpand(resultsType, timeFrame)
+    setResultsLength(50);
+  } else if (resultsLength === 50) { 
+    searchArtists(resultsType, timeFrame)
+    setResultsLength(20);
 
+  }
+}
   
 
   console.log(trackURIs);
@@ -150,6 +160,8 @@ const App = (props) => {
     {playlistPopUp === true ? setPlaylistPopUp(false) : setPlaylistPopUp(true)}
 
     var date = format(new Date(), "MMM do");
+    setResultsLength(20); //MAKE 20 TRACKS THE STARTING POINT FOR THE PLAYLIST POP UP
+    searchArtists(resultsType, timeFrame); //THIS RESETS SEARCH RESULTS TO 20 TRACKS ON POP UP OPEN OR CLOSE
     console.log(date);
     var playlistTimeFrameLocal;
     var playlistName;
@@ -272,7 +284,7 @@ const App = (props) => {
   return (
     <div className={classes.wrapper}>
     <div data-theme={dataTheme}>
-      {playlistPopUp === true && userTopList.length ? <PlaylistPopUp searchArtists={searchArtists} searchArtistsExpand={searchArtistsExpand} resultsLength={resultsLength} resultsType={resultsType} resultsGiven={resultsGiven} timeFrame={timeFrame} playlistName={playlistName} createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUp> : null}
+      {playlistPopUp === true && userTopList.length ? <PlaylistPopUp toggleResultsLength={toggleResultsLength} searchArtists={searchArtists} searchArtistsExpand={searchArtistsExpand} resultsLength={resultsLength} resultsType={resultsType} resultsGiven={resultsGiven} timeFrame={timeFrame} playlistName={playlistName} createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUp> : null}
       <div className={playlistPopUp === true ? classes.opacity : null}>
       <Media queries={{ small: { maxWidth: 599 } }}>
         {(matches) =>

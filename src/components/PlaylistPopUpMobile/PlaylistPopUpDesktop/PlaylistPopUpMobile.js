@@ -19,9 +19,8 @@ const PlaylistPopUpMobile = (props) => {
 
   const [scrollLock, setScrollLock] = useState(false)
 
-  
 
-    var results;
+     var results;
     {
         props.resultsType == "tracks"
           ? (results = props.resultsGiven.map((result, i) => {
@@ -59,12 +58,13 @@ const PlaylistPopUpMobile = (props) => {
             <div className={classes.relativeWrapper}>
             <div className={classes.buttonsContainer}>
                     <button className={classes.btn} onClick={props.createPlaylistL}>Create</button>
+                    <button className={classes.btn} onClick={props.togglePopUp}>Cancel</button>
                 </div>
               
                 <div className={classes.playlistInfoWrapper}>
                     <div className={classes.rowOne}>
                         <div className={classes.popUpTitle}>Create Spotify Playlist</div>
-                        <button className={classes.btnCancel}><X size={25} color="white" onClick={props.togglePopUp}/></button>
+                        
                         
                     </div>
                     <div className={classes.rowTwo}>
@@ -76,10 +76,12 @@ const PlaylistPopUpMobile = (props) => {
                       <PlaylistLengthToggle resultsType={props.resultsType} timeFrame={props.timeFrame} searchArtists={props.searchArtists} searchArtistsExpand={props.searchArtistsExpand} resultsLength={props.resultsLength} togglePlaylistLength={props.togglePlaylistLength}></PlaylistLengthToggle>
     </div>
                 </div>
-                <Swiper
+                <Swiper 
+                  //initialSlide={props.resultsLength === 20 ? "0" : "1"} // TAKE THIS OUT IF YOU ARE GOING TO SET THE DEFAULT PLAYLIST LENGTH TO 20
                   spaceBetween={50}
                   slidesPerView={1}
                   onTouchStart={() => setScrollLock(true)}
+                  onRealIndexChange={() => props.toggleResultsLength()}
                   onTouchEnd={() => setScrollLock(false)}
                   onSwiper={(swiper) => console.log(swiper)}
                 >
