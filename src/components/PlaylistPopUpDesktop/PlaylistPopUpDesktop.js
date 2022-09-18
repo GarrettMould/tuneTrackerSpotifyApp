@@ -55,7 +55,7 @@ const PlaylistPopUpDesktop = (props) => {
                     </div>
                     <div className={classes.rowTwo}>
                     <div className={classes.messageContainer}>
-                    <div className={classes.message}>{props.playlistName}</div>
+                    <div className={classes.message}>{props.playlistDisplayName}</div>
                 </div>
                     </div>
                     <div className={classes.rowThree}>

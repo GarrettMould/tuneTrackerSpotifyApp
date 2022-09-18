@@ -46,6 +46,8 @@ const App = (props) => {
   const [trackURIs, setTrackURIs] = useState([]);
 // Created Playlist Name
   const [playlistName, setPlaylistName] = useState("");
+  // Created Playlist Display Name
+  const [playlistDisplayName, setPlaylistDisplayName] = useState("");
   // Created Playlist Time Frame
   const [playlistTimeFrame, setPlaylistTimeFrame] = useState("");
   // Did the user click the "create playlist" button
@@ -165,6 +167,7 @@ const toggleResultsLength = () => {
     console.log(date);
     var playlistTimeFrameLocal;
     var playlistName;
+    var playlistDisplayName;
     console.log(trackURIs);
 
 
@@ -176,10 +179,12 @@ const toggleResultsLength = () => {
       : (playlistTimeFrameLocal = "All Time");
 
 
-    playlistName = `Top Tracks of ${playlistTimeFrameLocal} (${date})`;
 
+    playlistName = `Top Tracks of ${playlistTimeFrameLocal} (${date})`;
+    playlistDisplayName = `Top Tracks of ${playlistTimeFrameLocal}`;
     setPlaylistTimeFrame(playlistTimeFrameLocal);
     setPlaylistName(playlistName);
+    setPlaylistDisplayName(playlistDisplayName);
   }
 
 
@@ -284,7 +289,7 @@ const toggleResultsLength = () => {
   return (
     <div className={classes.wrapper}>
     <div data-theme={dataTheme}>
-      {playlistPopUp === true && userTopList.length ? <PlaylistPopUp toggleResultsLength={toggleResultsLength} searchArtists={searchArtists} searchArtistsExpand={searchArtistsExpand} resultsLength={resultsLength} resultsType={resultsType} resultsGiven={resultsGiven} timeFrame={timeFrame} playlistName={playlistName} createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUp> : null}
+      {playlistPopUp === true && userTopList.length ? <PlaylistPopUp playlistDisplayName={playlistDisplayName} toggleResultsLength={toggleResultsLength} searchArtists={searchArtists} searchArtistsExpand={searchArtistsExpand} resultsLength={resultsLength} resultsType={resultsType} resultsGiven={resultsGiven} timeFrame={timeFrame} playlistName={playlistName} createPlaylistL={createPlaylistL} handlePlaylistCreate={handlePlaylistCreate} togglePopUp={togglePopUp}></PlaylistPopUp> : null}
       <div className={playlistPopUp === true ? classes.opacity : null}>
       <Media queries={{ small: { maxWidth: 599 } }}>
         {(matches) =>
