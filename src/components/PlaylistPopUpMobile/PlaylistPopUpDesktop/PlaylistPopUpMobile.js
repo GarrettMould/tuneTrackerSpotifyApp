@@ -56,9 +56,6 @@ const PlaylistPopUpMobile = (props) => {
     return (
         <div className={classes.popUpContainer}>
             <div className={classes.relativeWrapper}>
-            <div className={classes.buttonsContainer}>
-                    <button className={classes.btn} onClick={props.createPlaylistL}>Create</button>
-                </div>
               
                 <div className={classes.playlistInfoWrapper}>
                     <div className={classes.rowOne}>
@@ -88,8 +85,9 @@ const PlaylistPopUpMobile = (props) => {
                   <SwiperSlide><div className={classes.slideContainer}><div className={scrollLock ? classes.resultsContainerNoScroll : classes.resultsContainer}>{results}</div></div></SwiperSlide>
                   <SwiperSlide><div className={classes.slideContainer}><div className={scrollLock ? classes.resultsContainerNoScroll : classes.resultsContainer}>{results}</div></div></SwiperSlide>
                 </Swiper>
-                
-                
+                <div className={classes.buttonsContainer}>
+                    <button className={classes.btn} onClick={props.createPlaylistL}>Create</button>
+                </div>
                 
             </div>
         </div>
