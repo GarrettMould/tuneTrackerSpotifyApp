@@ -6,7 +6,7 @@
     top: 0; 
     left: 0;
     width: 100%;
-    height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 .relativeWrapper { 
@@ -16,14 +16,14 @@
 
 
 .playlistInfoWrapper {
-    padding: 3%;
+    padding: 5%;
     display: flex;
     flex-direction: column;
 }
 
-.rowOne, .rowTwo { 
+.rowOne { 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .messageContainer { 
@@ -34,46 +34,46 @@
 
 .popUpTitle { 
     padding-bottom: 4%;
-    font-size: 175%; 
+    font-size: 150%; 
     font-weight: 800;
     color: white; 
 }
 
 .btnCancel { 
-    margin-top: 1%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #414141;
-    width: 30px; 
-    height: 30px; 
-    border-radius: 8px;
-    border:none; 
-    outline: none;
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #414141;
+  width: 30px; 
+  height: 30px; 
+  border-radius: 8px;
+  border:none; 
+  outline: none;
 }
 
 .message { 
     padding-bottom: 8%;
-    font-size: 150%; 
+    font-size: 125%; 
     font-weight: 600;
     color: var(--grey); 
 }
 
 .buttonsContainer { 
     width: 100%; 
-    height: 85px;
-    background-color: #282828;
+    height: 70px;
+    background-color: #121212;
     position: absolute;
     bottom: 0;
     display: flex; 
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 
 .btn {
     color: var(--secondary);
-    width: 45%;
+    width: 90%;
     height: 40px;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -97,8 +97,8 @@
 }
 
 .resultsContainer { 
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
     height: 65vh;
     display: flex;
     flex-direction: column;
