@@ -100,7 +100,7 @@
 .resultsContainer { 
   padding-left: 5%;
   padding-right: 5%;
-    height: 65vh;
+    height: 58vh;
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -110,7 +110,7 @@
 .resultsContainerNoScroll { 
   padding-left: 3%;
   padding-right: 3%;
-    height: 65vh;
+    height: 58vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
